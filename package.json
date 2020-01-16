@@ -13,7 +13,15 @@
   "licence": "Apache Licence 2.0",
   "keywords": ["Alexa", "Action", "Voice", "Assistant"],
   "author": "Stéphane Castrec",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephaneC/ActionSkillLib.git"
+  },
   "dependencies": {
+    "actions-on-google": "^2.12.0",
+    "ask-sdk": "^2.7.0"
+  },
+  "peerDependencies": {
     "actions-on-google": "^2.12.0",
     "ask-sdk": "^2.7.0"
   },
