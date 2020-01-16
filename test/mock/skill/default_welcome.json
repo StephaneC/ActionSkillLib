@@ -1,0 +1,69 @@
+{
+    "version": "1.0",
+    "session": {
+        "new": true,
+        "sessionId": "amzn1.echo-api.session.64f8e856-5e63-4e12-b268-d995befc549c",
+        "application": {
+            "applicationId": "amzn1.ask.skill.d003bdcd-7182-4306-b349-fb4e76e1dcea"
+        },
+        "user": {
+            "userId": "amzn1.ask.account.AEOTBQC5TSQAC7H4QT7QMQFUILS57YZAGWXE6A6LWU4P2INZNXN6SNMWIL5TKUXBTXD2JOQZFM7J6SDCNJ4FAS43X3ZHITF3ABME47XQAR2RZ4IGTK3ZGDGDNSPYMCDXTZBEDTELMSUG46I6BZLCD2SZLY5DWVVSLSCYL5GG764YRLVHNSAMXMRL7L4TBCOPTKLA4TU2RKVYK3I"
+        }
+    },
+    "context": {
+        "Display": {},
+        "System": {
+            "application": {
+                "applicationId": "amzn1.ask.skill.d003bdcd-7182-4306-b349-fb4e76e1dcea"
+            },
+            "user": {
+                "userId": "amzn1.ask.account.AEOTBQC5TSQAC7H4QT7QMQFUILS57YZAGWXE6A6LWU4P2INZNXN6SNMWIL5TKUXBTXD2JOQZFM7J6SDCNJ4FAS43X3ZHITF3ABME47XQAR2RZ4IGTK3ZGDGDNSPYMCDXTZBEDTELMSUG46I6BZLCD2SZLY5DWVVSLSCYL5GG764YRLVHNSAMXMRL7L4TBCOPTKLA4TU2RKVYK3I"
+            },
+            "device": {
+                "deviceId": "amzn1.ask.device.AF3MPNOIALAW2B3BNV5AWYUAK4W7M3FQ53TOCMOG2OFCRQOFEJAZOXNCECBP6HOUOKZ6XWU4M43L5M7BSP75T2WIPGSW2R7PDSAHPGOIT6CWS33D2XG3EJRAQLUYACCETTMUUBSR5KDCVOP2I6AK2HUTHAE7CRHFFXL3T6WXG4GWJA2UQFPDO",
+                "supportedInterfaces": {
+                    "Display": {
+                        "templateVersion": "1.0",
+                        "markupVersion": "1.0"
+                    }
+                }
+            },
+            "apiEndpoint": "https://api.eu.amazonalexa.com",
+            "apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLmQwMDNiZGNkLTcxODItNDMwNi1iMzQ5LWZiNGU3NmUxZGNlYSIsImV4cCI6MTU2ODI5NTExOSwiaWF0IjoxNTY4Mjk0ODE5LCJuYmYiOjE1NjgyOTQ4MTksInByaXZhdGVDbGFpbXMiOnsiY29udGV4dCI6IkFBQUFBQUFBQVFEZkFrVUE0L0dXNFpZVndkeWdGeTFJS3dFQUFBQUFBQUFaTCtFRWxQZEd0RndSYndDSmkvbXF3U0JpWXZUZkVxalltcWxNaU5tUGxxL1JEeE5Hb0RpcE9tTVNNeFdTb3BzSUZPWTlaN0M1c2pHQTVIeFV6WjYwWHJjaGxGYkI4QWM1ck8xWHltcTMyZDRDK3lBZ1Y5eXlRdUlyblNhaVVteXNqeGFyMXBGd2hocGlUWlhmUGEvMFRPd0EzTHoyWkFyUVNUV0s3NERWVm54SUhyUkFuL0Z6STJ2Yk4vYWkzQ3RtZzlsSFJBZjVzKzhTQUlDU0Rxcm5IVTNBcmZqamZFMldkZUxNWFNFMTQ1RXJhUnVQOGNVSy9RbVhxUGlZaStFRmkzNmVFMW56WGNtTm9MTjB5cU5Ca0EydUY1dzIxMUZkeHRLQkl4MnM5aDEvbStZYVNjWTlQWENkWHBTano4YzBoMGMyZG1qa1RFQ0loMVV6ZE5YRTFqSEUxQURWekxsWWZJcGUwMDl5UUY1c1ZGUE8zdFcyYzBrc0VDYU5wWHJOUHpoZzBwZW5pdG5FMlE9PSIsImNvbnNlbnRUb2tlbiI6bnVsbCwiZGV2aWNlSWQiOiJhbXpuMS5hc2suZGV2aWNlLkFGM01QTk9JQUxBVzJCM0JOVjVBV1lVQUs0VzdNM0ZRNTNUT0NNT0cyT0ZDUlFPRkVKQVpPWE5DRUNCUDZIT1VPS1o2WFdVNE00M0w1TTdCU1A3NVQyV0lQR1NXMlI3UERTQUhQR09JVDZDV1MzM0QyWEczRUpSQVFMVVlBQ0NFVFRNVVVCU1I1S0RDVk9QMkk2QUsySFVUSEFFN0NSSEZGWEwzVDZXWEc0R1dKQTJVUUZQRE8iLCJ1c2VySWQiOiJhbXpuMS5hc2suYWNjb3VudC5BRU9UQlFDNVRTUUFDN0g0UVQ3UU1RRlVJTFM1N1laQUdXWEU2QTZMV1U0UDJJTlpOWE42U05NV0lMNVRLVVhCVFhEMkpPUVpGTTdKNlNEQ05KNEZBUzQzWDNaSElURjNBQk1FNDdYUUFSMlJaNElHVEszWkdER0ROU1BZTUNEWFRaQkVEVEVMTVNVRzQ2STZCWkxDRDJTWkxZNURXVlZTTFNDWUw1R0c3NjRZUkxWSE5TQU1YTVJMN0w0VEJDT1BUS0xBNFRVMlJLVllLM0kifX0.NOclJeO87_r8tHAbEhSWAIgwMb0sXmEdeofrWxeoOtLwPfTZ3Qir0e_b9UZmS2nhlg7EtO4EMaAIxxasHkZftCQd4mh2rPjMb63pC62OgyRERvJ6W_RulN56EletAe_hQDTD0heyKlMJsCKJvOvuJPYxdo9GcAo7E7afNd_s924a0AHh2rTDEdFlaYoGiS7VTi2BxfFlMtED3NAXfwWZ0LC918BBMb7RKF4HONtx3-oKAz3rlni6DthpOixmnd0g7-gveJ6fxeKYhN9K2jjCDs3kP7essACG6gewjVRnYT7x0lpDGYFOFUK6PLFoWZTja7oKbcClWVvaxsAWHyL8JA"
+        },
+        "Viewport": {
+            "experiences": [
+                {
+                    "arcMinuteWidth": 346,
+                    "arcMinuteHeight": 216,
+                    "canRotate": false,
+                    "canResize": false
+                }
+            ],
+            "mode": "HUB",
+            "shape": "RECTANGLE",
+            "pixelWidth": 1280,
+            "pixelHeight": 800,
+            "dpi": 160,
+            "currentPixelWidth": 1280,
+            "currentPixelHeight": 800,
+            "touch": [
+                "SINGLE"
+            ],
+            "keyboard": [],
+            "video": {
+                "codecs": [
+                    "H_264_42",
+                    "H_264_41"
+                ]
+            }
+        }
+    },
+    "request": {
+        "type": "LaunchRequest",
+        "requestId": "amzn1.echo-api.request.d954a24c-4d17-4f2b-a713-fbd1ae6554b9",
+        "timestamp": "2019-09-12T13:26:59Z",
+        "locale": "fr-FR",
+        "shouldLinkResultBeReturned": false
+    }
+}

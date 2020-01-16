@@ -1,0 +1,21 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "alwaysStrict" : true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "target": "es2017",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "outDir": "dist",
+        "rootDir": "./src",
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "allowSyntheticDefaultImports": true      
+    },    
+    "exclude": [
+        "test",
+        "node_modules"
+    ]
+}
