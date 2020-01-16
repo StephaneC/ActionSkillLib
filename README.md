@@ -15,6 +15,6 @@ Let's try to develope a simple framework for Assistant and Alexa Skill.
 
 ## TODO
 [] ISP for Actions
-[] Web Api
+[] Web Api for Actions and Alexa
 
 
