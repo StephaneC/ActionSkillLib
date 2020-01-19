@@ -19,13 +19,16 @@ class PlateformMock extends PlateForm_1.Plateform {
                 addDirective: () => {
                     return input["responseBuilder"];
                 },
-                speak: () => {
+                speak: (msg) => {
+                    this.speak = msg;
                     return input["responseBuilder"];
                 },
-                reprompt: () => {
+                reprompt: (msg) => {
+                    this.reprompt = msg;
                     return input["responseBuilder"];
                 },
-                withShouldEndSession: () => {
+                withShouldEndSession: (end) => {
+                    this.endSession = end;
                     return input["responseBuilder"];
                 },
             };

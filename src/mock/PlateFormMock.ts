@@ -20,6 +20,10 @@ export class PlateformMock extends Plateform {
     template: Template; 
     inputUtils: InputUtils;
 
+    speak: string;
+    reprompt: string;
+    endSession: boolean;
+
     constructor (input: HandlerInput| DialogflowConversation) {
         super(input);
         this.userStorage = new UserStorageMock();
@@ -30,13 +34,16 @@ export class PlateformMock extends Plateform {
                 addDirective: () => {//TODO
                     return input["responseBuilder"];
                 },
-                speak: () => {//TODO
+                speak: (msg: string) => {
+                    this.speak = msg;
                     return input["responseBuilder"];
                 },
-                reprompt: () => {//TODO
+                reprompt: (msg: string) => {
+                    this.reprompt = msg;
                     return input["responseBuilder"];
                 },
-                withShouldEndSession: () => {//TODO
+                withShouldEndSession: (end: boolean) => {
+                    this.endSession = end;
                     return input["responseBuilder"];
                 },
             };
