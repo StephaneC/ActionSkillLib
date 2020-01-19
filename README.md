@@ -14,7 +14,9 @@ Let's try to develope a simple framework for Assistant and Alexa Skill.
 #### Deploy skills 
 
 ## TODO
-[] ISP for Actions
-[] Web Api for Actions and Alexa
+* [] ISP for Actions
+* [] Web Api for Actions and Alexa
+* [] Permissions
+* [] Geolocation
 
 
