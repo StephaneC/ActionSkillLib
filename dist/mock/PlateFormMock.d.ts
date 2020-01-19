@@ -18,7 +18,7 @@ export declare class PlateformMock extends Plateform {
     readonly entities: DynamicEntities;
     template: Template;
     inputUtils: InputUtils;
-    speak: string;
+    speak: Array<string>;
     reprompt: string;
     endSession: boolean;
     constructor(input: HandlerInput | DialogflowConversation);

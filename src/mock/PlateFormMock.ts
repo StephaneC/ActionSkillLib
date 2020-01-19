@@ -1,5 +1,5 @@
 import { HandlerInput } from "ask-sdk";
-import { DialogflowConversation } from "actions-on-google";
+import { DialogflowConversation, Response } from "actions-on-google";
 import { Template } from "../Template";
 import { InputUtils } from "../InputUtils";
 import { SessionStorage } from "../SessionStorage";
@@ -20,7 +20,7 @@ export class PlateformMock extends Plateform {
     template: Template; 
     inputUtils: InputUtils;
 
-    speak: string;
+    speak: Array<string> = [];
     reprompt: string;
     endSession: boolean;
 
@@ -35,7 +35,7 @@ export class PlateformMock extends Plateform {
                     return input["responseBuilder"];
                 },
                 speak: (msg: string) => {
-                    this.speak = msg;
+                    this.speak = [msg];
                     return input["responseBuilder"];
                 },
                 reprompt: (msg: string) => {
@@ -53,6 +53,13 @@ export class PlateformMock extends Plateform {
                     this.sessionStorage.setItem(k, input["requestEnvelope"].session.attributes[k]);
                 });
             }
+        } else {
+            (input as DialogflowConversation).ask = (...responses: Response[]) => {
+                responses.forEach(r => {
+                    this.speak.push(r.toString());
+                })
+                return input as DialogflowConversation;
+            };
         }
     }
 }

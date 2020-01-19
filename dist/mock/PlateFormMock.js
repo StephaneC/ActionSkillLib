@@ -12,6 +12,7 @@ var PLATEFORM;
 class PlateformMock extends PlateForm_1.Plateform {
     constructor(input) {
         super(input);
+        this.speak = [];
         this.userStorage = new UserStorageMock_1.UserStorageMock();
         this.sessionStorage = new SessionStorageMock_1.SessionStorageMock();
         if (this.type === PLATEFORM.ALEXA) {
@@ -20,7 +21,7 @@ class PlateformMock extends PlateForm_1.Plateform {
                     return input["responseBuilder"];
                 },
                 speak: (msg) => {
-                    this.speak = msg;
+                    this.speak = [msg];
                     return input["responseBuilder"];
                 },
                 reprompt: (msg) => {
@@ -38,6 +39,14 @@ class PlateformMock extends PlateForm_1.Plateform {
                     this.sessionStorage.setItem(k, input["requestEnvelope"].session.attributes[k]);
                 });
             }
+        }
+        else {
+            input.ask = (...responses) => {
+                responses.forEach(r => {
+                    this.speak.push(r.toString());
+                });
+                return input;
+            };
         }
     }
 }
