@@ -31,6 +31,10 @@ export class PlateformMock extends Plateform {
 
         if (this.type === PLATEFORM.ALEXA) {
             input["responseBuilder"] = {
+                addRenderTemplateDirective: () => {
+                    //TODO
+                    return input["responseBuilder"];
+                },
                 addDirective: () => {//TODO
                     return input["responseBuilder"];
                 },
