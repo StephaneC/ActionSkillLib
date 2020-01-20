@@ -17,6 +17,10 @@ class PlateformMock extends PlateForm_1.Plateform {
         this.sessionStorage = new SessionStorageMock_1.SessionStorageMock();
         if (this.type === PLATEFORM.ALEXA) {
             input["responseBuilder"] = {
+                addRenderTemplateDirective: () => {
+                    //TODO
+                    return input["responseBuilder"];
+                },
                 addDirective: () => {
                     return input["responseBuilder"];
                 },

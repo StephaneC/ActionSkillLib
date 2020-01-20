@@ -32,7 +32,7 @@ class Plateform {
             this.entities = new ActionEntities_1.ActionEntities(input);
             this.inAppPurchase = new ActionInAppPurchase_1.ActionInAppPurchase(input);
         }
-        else {
+        else /*if (input instanceof HandlerInput)*/ {
             console.log('Init plateform ALEXA');
             this.type = PLATEFORM.ALEXA;
             this.template = new SkillTemplate_1.SkillTemplate(input);
@@ -41,7 +41,9 @@ class Plateform {
             this.userStorage = new SkillUserStorage_1.SkillUserStorage(input);
             this.entities = new SkillEntities_1.SkillEntities(input);
             this.inAppPurchase = new InAppPurchase_1.SkillInAppPurchase(input);
-        }
+        } /*else {
+            console.error('unable to find plateform for ' + typeof input);
+        }*/
     }
     async getUserId() {
         if (this.type === PLATEFORM.ALEXA) {

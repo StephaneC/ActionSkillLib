@@ -42,7 +42,7 @@ export class Plateform {
             this.userStorage = new ActionUserStorage(input);
             this.entities = new ActionEntities(input);
             this.inAppPurchase = new ActionInAppPurchase(input);
-        } else if (input instanceof HandlerInput) {
+        } else /*if (input instanceof HandlerInput)*/ {
             console.log('Init plateform ALEXA');
             this.type = PLATEFORM.ALEXA;
             this.template = new SkillTemplate(input);
@@ -51,9 +51,9 @@ export class Plateform {
             this.userStorage = new SkillUserStorage(input);
             this.entities = new SkillEntities(input);
             this.inAppPurchase = new SkillInAppPurchase(input);
-        } else {
+        } /*else {
             console.error('unable to find plateform for ' + typeof input);
-        }
+        }*/
     }
 
 
