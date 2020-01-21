@@ -43,6 +43,11 @@ export class ActionEntities implements DynamicEntities {
         return mappedEntity;
     }
 
+    /**
+     * WARNING: Always end with this.
+     * If you add stuff in your conversation next, it won't work.
+     * @param entities 
+     */
     public updateEntities(entities: Array<Entity>) {
         try {
             const responseBody = this.input.serialize() as ResponseBody;
