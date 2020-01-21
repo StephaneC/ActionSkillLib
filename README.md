@@ -16,6 +16,15 @@ To uniformise Skill and Actions reprompt, we save the reprompt in sessionStorage
 To use it, add the ActionIntentHandlerReprompt use it in the intent you need. 
 Here is the [actions doc about reprompt](https://developers.google.com/assistant/conversational/reprompts)
 
+*Sample:*
+`
+    app.intent('RepromptIntent', async (conv: DialogflowConversation, params, option) => {
+        if (conv.data.reprompt){ 
+            conv.ask(conv.data.reprompt)
+        }
+    });
+`
+
 
 ## TODO
 * [] ISP for Actions

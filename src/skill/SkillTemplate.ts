@@ -57,13 +57,6 @@ export class SkillTemplate implements Template {
                 },*/
                 listItems: items.map(this.mapItems)
             }
-            // add repeat option
-            myTemplate.listItems.push({
-                token: 'REPEAT',
-                textContent: new Alexa.RichTextContentHelper()
-                    .withPrimaryText("Ré-écouter")
-                    .getTextContent()
-            });
 
             this.input.responseBuilder.addRenderTemplateDirective(myTemplate)
         }
