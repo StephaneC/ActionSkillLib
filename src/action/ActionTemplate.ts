@@ -41,6 +41,9 @@ export class ActionTemplate implements Template {
             this.input
                 .ask(message)
         }
+        if (reprompt) {
+            this.input.data['reprompt'] = reprompt;
+        }
     }
 
     error(msg: string) {

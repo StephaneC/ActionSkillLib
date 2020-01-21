@@ -10,8 +10,12 @@ Let's try to develope a simple framework for Assistant and Alexa Skill.
 ### npm install
 
 
-### ASK CLI
-#### Deploy skills 
+### Actions TIPS
+#### Reprompt 
+To uniformise Skill and Actions reprompt, we save the reprompt in sessionStorage on action when you supply one with simpleMessage.
+To use it, add the ActionIntentHandlerReprompt use it in the intent you need. 
+Here is the [actions doc about reprompt](https://developers.google.com/assistant/conversational/reprompts)
+
 
 ## TODO
 * [] ISP for Actions
