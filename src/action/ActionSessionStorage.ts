@@ -18,5 +18,6 @@ export class ActionSessionStorage implements SessionStorage {
     setItem(key: string, value): any {
         console.log('Setting Action storage : ' + key, value);
         this.input.data[key] = value;
+        console.log('storage data : ' + this.input.data);
     }
 }

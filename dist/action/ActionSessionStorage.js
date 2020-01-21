@@ -13,6 +13,7 @@ class ActionSessionStorage {
     setItem(key, value) {
         console.log('Setting Action storage : ' + key, value);
         this.input.data[key] = value;
+        console.log('storage data : ' + this.input.data);
     }
 }
 exports.ActionSessionStorage = ActionSessionStorage;
