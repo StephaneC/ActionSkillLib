@@ -33,6 +33,7 @@ export class Plateform {
 
     constructor (input: HandlerInput| DialogflowConversation) {
         this.input = input;
+        console.log('Creating plateform. ', typeof input);
         if (input instanceof DialogflowConversation) {
             console.log('Init plateform ACTION');
             this.type = PLATEFORM.ACTION;

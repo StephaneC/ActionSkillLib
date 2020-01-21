@@ -22,6 +22,7 @@ var PLATEFORM;
 class Plateform {
     constructor(input) {
         this.input = input;
+        console.log('Creating plateform. ', typeof input);
         if (input instanceof actions_on_google_1.DialogflowConversation) {
             console.log('Init plateform ACTION');
             this.type = PLATEFORM.ACTION;
