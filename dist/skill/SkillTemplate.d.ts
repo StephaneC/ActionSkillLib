@@ -17,7 +17,10 @@ export declare class SkillTemplate implements Template {
     list(title: string, tokenTouch: string, items: Array<{
         key: string;
         value: string;
-    }>): void;
+    }>, backgroundImage?: {
+        url: string;
+        desc: string;
+    }): void;
     error(): void;
     private mapItems;
 }

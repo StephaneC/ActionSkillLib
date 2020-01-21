@@ -9,7 +9,10 @@ export interface Template {
     list(title: string, tokenTouch: string, items: Array<{
         key: string;
         value: string;
-    }>): void;
+    }>, backgroundImage?: {
+        url: string;
+        desc: string;
+    }): void;
     error(msg: string): void;
     card(title: string, message: string, image: string): any;
 }

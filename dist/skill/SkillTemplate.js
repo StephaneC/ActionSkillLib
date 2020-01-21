@@ -31,21 +31,23 @@ class SkillTemplate {
      * @param tokenTouch
      * @param items
      */
-    list(title, tokenTouch, items) {
+    list(title, tokenTouch, items, backgroundImage) {
         if (this.hasDisplay) {
             const myTemplate = {
                 type: 'ListTemplate1',
                 token: tokenTouch,
                 title: title,
                 backButton: 'HIDDEN',
-                /*backgroundImage: {
-                    contentDescription: 'rfm',
-                    sources: [{
-                        url: 'https://resize-rfm.lanmedia.fr/r/,/img/var/rfm/storage/images/news/rfm-1ere-radio-musicale-adulte-en-ile-de-france-13778/195080-1-fre-FR/RFM-1ere-radio-musicale-adulte-en-Ile-de-France.jpg'
-                    }]
-                },*/
                 listItems: items.map(this.mapItems)
             };
+            if (backgroundImage) {
+                myTemplate.backgroundImage = {
+                    contentDescription: backgroundImage.desc,
+                    sources: [{
+                            url: backgroundImage.url
+                        }]
+                };
+            }
             this.input.responseBuilder.addRenderTemplateDirective(myTemplate);
         }
     }
