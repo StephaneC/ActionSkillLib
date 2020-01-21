@@ -46,6 +46,9 @@ export class PlateformMock extends Plateform {
                     this.reprompt = msg;
                     return input["responseBuilder"];
                 },
+                withStandardCard: () => {
+
+                },
                 withShouldEndSession: (end: boolean) => {
                     this.endSession = end;
                     return input["responseBuilder"];
