@@ -69,6 +69,7 @@ class ActionTemplate {
                     i.value,
                 ],
                 title: i.value,
+                description: i.value2
             };
         });
         return it;

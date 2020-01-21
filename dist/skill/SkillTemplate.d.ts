@@ -17,6 +17,7 @@ export declare class SkillTemplate implements Template {
     list(title: string, tokenTouch: string, items: Array<{
         key: string;
         value: string;
+        value2?: string;
     }>, backgroundImage?: {
         url: string;
         desc: string;

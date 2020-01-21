@@ -42,7 +42,7 @@ export class SkillTemplate implements Template {
      * @param tokenTouch 
      * @param items 
      */
-    list(title: string, tokenTouch: string, items: Array<{ key: string, value: string }>, backgroundImage?: {url: string, desc: string}): void {
+    list(title: string, tokenTouch: string, items: Array<{ key: string, value: string, value2?: string }>, backgroundImage?: {url: string, desc: string}): void {
         if (this.hasDisplay) {
             const myTemplate: interfaces.display.Template = {
                 type: 'ListTemplate1',
@@ -70,11 +70,12 @@ export class SkillTemplate implements Template {
             .withShouldEndSession(true);
     }
 
-    private mapItems(response: { key: string, value: string }): interfaces.display.ListItem {
+    private mapItems(response: { key: string, value: string, value2?: string }): interfaces.display.ListItem {
         return {
             token: response.key,
             textContent: new Alexa.RichTextContentHelper()
                 .withPrimaryText(response.value)
+                .withSecondaryText(response.value2)
                 .getTextContent()
         }
     }

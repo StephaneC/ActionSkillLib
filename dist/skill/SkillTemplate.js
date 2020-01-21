@@ -61,6 +61,7 @@ class SkillTemplate {
             token: response.key,
             textContent: new Alexa.RichTextContentHelper()
                 .withPrimaryText(response.value)
+                .withSecondaryText(response.value2)
                 .getTextContent()
         };
     }

@@ -12,6 +12,7 @@ export declare class ActionTemplate implements Template {
     list(title: string, touchToken: string, items: Array<{
         key: string;
         value: string;
+        value2?: string;
     }>): void;
     interactiveCanvas(url: string, closeMic?: boolean, data?: any): void;
     private getItems;
