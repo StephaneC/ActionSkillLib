@@ -1,3 +1,4 @@
+import { Directive } from 'ask-sdk-model';
 import { HandlerInput } from 'ask-sdk';
 import { Template } from '../Template';
 export declare class SkillTemplate implements Template {
@@ -22,6 +23,7 @@ export declare class SkillTemplate implements Template {
         url: string;
         desc: string;
     }): void;
+    addApl: (directive: Directive) => void;
     error(): void;
     private mapItems;
 }

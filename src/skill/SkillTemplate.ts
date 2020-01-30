@@ -1,4 +1,5 @@
 const Alexa = require('ask-sdk-core');
+import { Directive } from 'ask-sdk-model';
 import { interfaces } from 'ask-sdk-model';
 import { HandlerInput } from 'ask-sdk';
 import { Template } from '../Template';
@@ -61,6 +62,12 @@ export class SkillTemplate implements Template {
             }
 
             this.input.responseBuilder.addRenderTemplateDirective(myTemplate)
+        }
+    }
+
+    addApl = (directive: Directive) => {
+        if (this.hasApl) {
+            this.input.responseBuilder.addDirective(directive);
         }
     }
 

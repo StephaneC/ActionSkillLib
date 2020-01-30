@@ -5,6 +5,11 @@ const SkillInputUtils_1 = require("./SkillInputUtils");
 const template_utils_1 = require("../template.utils");
 class SkillTemplate {
     constructor(input) {
+        this.addApl = (directive) => {
+            if (this.hasApl) {
+                this.input.responseBuilder.addDirective(directive);
+            }
+        };
         this.input = input;
         this.hasDisplay = new SkillInputUtils_1.SkillInputUtils(input).supportsDisplay();
         this.hasApl = input.requestEnvelope.context.System.device.supportedInterfaces['Alexa.Presentation.APL'] ? true : false;
