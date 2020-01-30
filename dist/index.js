@@ -1,5 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var SkillTemplate_1 = require("./skill/SkillTemplate");
+exports.SkillTemplate = SkillTemplate_1.SkillTemplate;
+var ActionTemplate_1 = require("./action/ActionTemplate");
+exports.ActionTemplate = ActionTemplate_1.ActionTemplate;
 var PlateForm_1 = require("./PlateForm");
 exports.Plateform = PlateForm_1.Plateform;
 var PlateFormMock_1 = require("./mock/PlateFormMock");
