@@ -10,6 +10,7 @@ export interface Template {
         key: string;
         value: string;
         value2?: string;
+        icon?: string;
     }>, backgroundImage?: {
         url: string;
         desc: string;

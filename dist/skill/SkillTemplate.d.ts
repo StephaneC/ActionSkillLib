@@ -19,6 +19,7 @@ export declare class SkillTemplate implements Template {
         key: string;
         value: string;
         value2?: string;
+        icon?: string;
     }>, backgroundImage?: {
         url: string;
         desc: string;

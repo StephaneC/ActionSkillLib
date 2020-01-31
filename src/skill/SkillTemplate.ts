@@ -15,7 +15,7 @@ export class SkillTemplate implements Template {
     constructor(input: HandlerInput) {
         this.input = input;
         this.hasDisplay = new SkillInputUtils(input).supportsDisplay();
-        this.hasApl = input.requestEnvelope.context.System.device.supportedInterfaces['Alexa.Presentation.APL']? true: false;
+        this.hasApl = input.requestEnvelope.context.System.device.supportedInterfaces['Alexa.Presentation.APL'] ? true : false;
     }
 
     suggestions(suggestions: Array<string>) {
@@ -43,7 +43,7 @@ export class SkillTemplate implements Template {
      * @param tokenTouch 
      * @param items 
      */
-    list(title: string, tokenTouch: string, items: Array<{ key: string, value: string, value2?: string }>, backgroundImage?: {url: string, desc: string}): void {
+    list(title: string, tokenTouch: string, items: Array<{ key: string, value: string, value2?: string, icon?: string }>, backgroundImage?: { url: string, desc: string }): void {
         if (this.hasDisplay) {
             const myTemplate: interfaces.display.Template = {
                 type: 'ListTemplate1',
@@ -77,14 +77,20 @@ export class SkillTemplate implements Template {
             .withShouldEndSession(true);
     }
 
-    private mapItems(response: { key: string, value: string, value2?: string }): interfaces.display.ListItem {
-        return {
+    private mapItems(response: { key: string, value: string, value2?: string, icon?: string }): interfaces.display.ListItem {
+        let item = {
             token: response.key,
             textContent: new Alexa.RichTextContentHelper()
                 .withPrimaryText(response.value)
                 .withSecondaryText(response.value2)
                 .getTextContent()
         }
+        if (response.icon) {
+            item['image'] = new Alexa.ImageHelper()
+                .addImageInstance(response.icon)
+        }
+
+        return item;
     }
 
 }

@@ -62,13 +62,18 @@ class SkillTemplate {
             .withShouldEndSession(true);
     }
     mapItems(response) {
-        return {
+        let item = {
             token: response.key,
             textContent: new Alexa.RichTextContentHelper()
                 .withPrimaryText(response.value)
                 .withSecondaryText(response.value2)
                 .getTextContent()
         };
+        if (response.icon) {
+            item['image'] = new Alexa.ImageHelper()
+                .addImageInstance(response.icon);
+        }
+        return item;
     }
 }
 exports.SkillTemplate = SkillTemplate;

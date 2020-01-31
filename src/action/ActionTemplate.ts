@@ -60,7 +60,7 @@ export class ActionTemplate implements Template {
         }
     }
 
-    list(title: string, touchToken: string, items: Array<{key: string, value: string, value2?: string}>): void {
+    list(title: string, touchToken: string, items: Array<{key: string, value: string, value2?: string, icon?: string}>): void {
         const list = new List({
             title: title,
             items: this.getItems(items)
@@ -72,7 +72,7 @@ export class ActionTemplate implements Template {
         this.input.ask(new HtmlResponse({url:url, suppress: closeMic, data: data}))
     }
 
-    private getItems(items: Array<{key: string, value: string, value2?: string}>) {
+    private getItems(items: Array<{key: string, value: string, value2?: string, icon?: string}>) {
         const it = {};
         items.forEach(i => {
             it[i.key] = {
@@ -81,7 +81,8 @@ export class ActionTemplate implements Template {
                   i.value,
                 ],
                 title: i.value,
-                description: i.value2
+                description: i.value2,
+                icon: i.icon
               }
         });
         return it;

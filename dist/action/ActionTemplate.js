@@ -69,7 +69,8 @@ class ActionTemplate {
                     i.value,
                 ],
                 title: i.value,
-                description: i.value2
+                description: i.value2,
+                icon: i.icon
             };
         });
         return it;
