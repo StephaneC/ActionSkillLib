@@ -38,7 +38,7 @@ export class SkillInputUtils implements InputUtils {
     /** retrieve Entity Id, If no Id, get value */
     getEntity(slotName: string) {
         const event = this.input.requestEnvelope.request as IntentRequest;
-        if (event.intent.slots &&
+        if (event.intent && event.intent.slots &&
             event.intent.slots[slotName]) {
             let value = this.checkResolutionsValue(event.intent.slots[slotName]);
             if (value) {
