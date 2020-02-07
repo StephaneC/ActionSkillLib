@@ -22,7 +22,8 @@ export class ActionInputUtils implements InputUtils {
 
     getClicked(): string {
         try {
-            return (this.input as any).originalDetectIntentRequest.payload.inputs[0].arguments[0].textValue;
+            if (this.input.body && this.input.body['originalDetectIntentRequest'])
+            return this.input.body['originalDetectIntentRequest'].payload.inputs[0].arguments[0].textValue;
         } catch(e)  {
             console.error('error retrieving key clicked', e);
         }
