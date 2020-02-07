@@ -13,8 +13,12 @@ class ActionInputUtils {
         return params[slotName];
     }
     getClicked() {
-        //TODO
-        return null;
+        try {
+            return this.input.originalDetectIntentRequest.payload.inputs[0].arguments[0].textValue;
+        }
+        catch (e) {
+            console.error('error retrieving key clicked', e);
+        }
     }
     getOffsetInMilliseconds() {
         return null;
