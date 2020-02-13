@@ -60,7 +60,7 @@ export class ActionTemplate implements Template {
         }
     }
 
-    list(title: string, touchToken: string, items: Array<{key: string, value: string, value2?: string, icon?: string}>): void {
+    list(title: string, touchToken: string, items: Array<{key: string, value: string, value2?: string, synonyms?: Array<string>, icon?: string}>): void {
         const list = new List({
             title: title,
             items: this.getItems(items)
@@ -72,14 +72,12 @@ export class ActionTemplate implements Template {
         this.input.ask(new HtmlResponse({url:url, suppress: closeMic, data: data}))
     }
 
-    private getItems(items: Array<{key: string, value: string, value2?: string, icon?: string}>) {
+    private getItems(items: Array<{key: string, value: string, value2?: string, synonyms?: Array<string>, icon?: string}>) {
         const it = {};
         items.forEach(i => {
+            const syn = (i.synonyms && i.synonyms.length > 0)? i.synonyms : [i.key, i.value];
             it[i.key] = {
-                synonyms: [
-                  i.key,
-                  i.value,
-                ],
+                synonyms: syn,
                 title: i.value,
                 description: i.value2,
                 icon: i.icon

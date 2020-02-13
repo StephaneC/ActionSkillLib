@@ -13,6 +13,7 @@ export declare class ActionTemplate implements Template {
         key: string;
         value: string;
         value2?: string;
+        synonyms?: Array<string>;
         icon?: string;
     }>): void;
     interactiveCanvas(url: string, closeMic?: boolean, data?: any): void;

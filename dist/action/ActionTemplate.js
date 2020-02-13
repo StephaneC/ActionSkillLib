@@ -63,11 +63,9 @@ class ActionTemplate {
     getItems(items) {
         const it = {};
         items.forEach(i => {
+            const syn = (i.synonyms && i.synonyms.length > 0) ? i.synonyms : [i.key, i.value];
             it[i.key] = {
-                synonyms: [
-                    i.key,
-                    i.value,
-                ],
+                synonyms: syn,
                 title: i.value,
                 description: i.value2,
                 icon: i.icon
