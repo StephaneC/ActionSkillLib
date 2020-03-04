@@ -10,7 +10,8 @@ class ActionInputUtils {
     }
     getEntity(slotName) {
         const params = this.input.parameters;
-        return params[slotName];
+        const entity = params[slotName];
+        return (entity) ? entity : null;
     }
     getClicked() {
         try {

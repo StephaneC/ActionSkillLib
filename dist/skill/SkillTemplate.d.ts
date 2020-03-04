@@ -6,6 +6,9 @@ export declare class SkillTemplate implements Template {
     hasDisplay: boolean;
     hasApl: boolean;
     constructor(input: HandlerInput);
+    private addBackground;
+    playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
+    playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
     suggestions(suggestions: Array<string>): void;
     card(title: string, message: string, image: string): void;
     simpleMessage(message: string, reprompt: string, close: boolean): void;

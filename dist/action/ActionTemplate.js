@@ -4,10 +4,25 @@ const actions_on_google_1 = require("actions-on-google");
 const ActionInputUtils_1 = require("./ActionInputUtils");
 const actionssdk_1 = require("actions-on-google/dist/service/actionssdk");
 const template_utils_1 = require("../template.utils");
+const UrlUtils_1 = require("../UrlUtils");
 class ActionTemplate {
     constructor(input) {
         this.input = input;
         this.hasDisplay = new ActionInputUtils_1.ActionInputUtils(input).supportsDisplay();
+    }
+    playAudio(url, title, subtitle, img, backgroundImg, token, offset) {
+        this.input.ask(new actions_on_google_1.MediaObject({
+            name: title,
+            url: UrlUtils_1.formatUrlHttps(url),
+            description: subtitle,
+            icon: new actions_on_google_1.Image({
+                url: img,
+                alt: title,
+            }),
+        }));
+    }
+    playLater(url, title, subtitle, img, backgroundImg, token, offset) {
+        //TODO
     }
     card(title, message, image) {
         this.input.ask(this.basicCard(title, message, image));
@@ -86,20 +101,6 @@ class ActionTemplate {
             });
         }
         return card;
-    }
-    getMediaObject(title, url, description, imgUrl) {
-        const mo = new actions_on_google_1.MediaObject({
-            name: title,
-            url: url,
-            description: description
-        });
-        if (imgUrl) {
-            mo.icon = new actions_on_google_1.Image({
-                url: imgUrl,
-                alt: title,
-            });
-        }
-        return mo;
     }
 }
 exports.ActionTemplate = ActionTemplate;

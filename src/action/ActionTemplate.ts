@@ -3,6 +3,7 @@ import { DialogflowConversation, MediaObject, Image, List } from "actions-on-goo
 import { ActionInputUtils } from "./ActionInputUtils";
 import { BasicCard, Suggestions, HtmlResponse } from "actions-on-google/dist/service/actionssdk";
 import { addSpeakBalise, isAudio } from "../template.utils";
+import { formatUrlHttps } from "../UrlUtils";
 
 
 export class ActionTemplate implements Template {
@@ -13,6 +14,22 @@ export class ActionTemplate implements Template {
     constructor(input: DialogflowConversation) {
         this.input = input;
         this.hasDisplay = new ActionInputUtils(input).supportsDisplay();
+    }
+
+    playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number) {
+        this.input.ask(new MediaObject({
+            name: title,
+            url: formatUrlHttps(url),
+            description: subtitle,
+            icon: new Image({
+              url: img,
+              alt: title,
+            }),
+          }));
+    }
+
+    playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number) {
+        //TODO
     }
 
     card(title: string, message: string, image: string) {
@@ -99,21 +116,5 @@ export class ActionTemplate implements Template {
             });
         }
         return card;
-    }
-
-    getMediaObject(title, url: string, description: string, imgUrl?: string): MediaObject {
-        const mo: MediaObject = new MediaObject({
-            name: title,
-            url: url,
-            description: description
-
-        });
-        if (imgUrl) {
-            mo.icon = new Image({
-                url: imgUrl,
-                alt: title,
-            });
-        }
-        return mo;
     }
 }

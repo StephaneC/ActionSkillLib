@@ -17,7 +17,8 @@ export class ActionInputUtils implements InputUtils {
 
     getEntity(slotName: string): string {
         const params = this.input.parameters;
-        return params[slotName] as string;
+        const entity = params[slotName];
+        return (entity)? entity as string : null;
     }
 
     getClicked(): string {

@@ -9,7 +9,11 @@ export interface Template {
     /** Simple templates */
     simpleMessage(message: string, reprompt: string, close: boolean): void;
     suggestions(suggestions: Array<string>);
-    list(title: string, tokenTouch: string, items: Array<{ key: string, value: string, value2?: string, synonyms?: Array<string>, icon?: string}>, backgroundImage?: {url: string, desc: string}): void;
+    list(title: string, tokenTouch: string, items: Array<{ key: string, value: string, value2?: string, synonyms?: Array<string>, icon?: string }>, backgroundImage?: { url: string, desc: string }): void;
     error(msg: string): void;
     card(title: string, message: string, image: string);
+
+    playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number);
+    playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number);
+
 }

@@ -1,9 +1,11 @@
 import { Template } from "../Template";
-import { DialogflowConversation, MediaObject } from "actions-on-google";
+import { DialogflowConversation } from "actions-on-google";
 export declare class ActionTemplate implements Template {
     input: DialogflowConversation;
     hasDisplay: boolean;
     constructor(input: DialogflowConversation);
+    playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
+    playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
     card(title: string, message: string, image: string): void;
     suggestions(suggestions: Array<string>): void;
     simpleMessage(message: string, reprompt: string, close: boolean): void;
@@ -19,5 +21,4 @@ export declare class ActionTemplate implements Template {
     interactiveCanvas(url: string, closeMic?: boolean, data?: any): void;
     private getItems;
     private basicCard;
-    getMediaObject(title: any, url: string, description: string, imgUrl?: string): MediaObject;
 }

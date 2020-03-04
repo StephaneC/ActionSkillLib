@@ -5,6 +5,7 @@ import { HandlerInput } from 'ask-sdk';
 import { Template } from '../Template';
 import { SkillInputUtils } from './SkillInputUtils';
 import { addSpeakBalise, isAudio, adaptAudioTagSSMLToAlexa } from '../template.utils';
+import { formatUrlHttps } from '../UrlUtils';
 
 export class SkillTemplate implements Template {
 
@@ -17,6 +18,49 @@ export class SkillTemplate implements Template {
         this.hasDisplay = new SkillInputUtils(input).supportsDisplay();
         this.hasApl = input.requestEnvelope.context.System.device.supportedInterfaces['Alexa.Presentation.APL'] ? true : false;
     }
+
+    private addBackground(title: string, subtitle: string, img: string, backgroundImg: string) {
+        const directive = <interfaces.audioplayer.PlayDirective>this.input.responseBuilder.getResponse().directives[0]
+        directive.audioItem['metadata'] = {
+            title: title,
+            subtitle: subtitle
+        };
+        if (img) {
+            directive.audioItem['metadata'].art = {
+                contentDescription: title,
+                sources: [{
+                    url: formatUrlHttps(img)
+                }]
+            }
+        }
+        if (backgroundImg) {
+            directive.audioItem['metadata'].backgroundImage = {
+                contentDescription: title,
+                sources: [{
+                    url: formatUrlHttps(img)
+                }]
+            }
+        }
+    }
+
+    playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number) {
+        this.input.responseBuilder
+            .addAudioPlayerPlayDirective('REPLACE_ALL', formatUrlHttps(url), token, offset)
+            .withShouldEndSession(true);
+        if (this.hasDisplay) {
+            this.addBackground(title, subtitle, img, backgroundImg);
+        }
+    }
+
+    playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number) {
+        this.input.responseBuilder
+            .addAudioPlayerPlayDirective('REPLACE_ENQUEUED', formatUrlHttps(url), token, offset)
+            .withShouldEndSession(true);
+        if (this.hasDisplay) {
+            this.addBackground(title, subtitle, img, backgroundImg);
+        }
+    }
+
 
     suggestions(suggestions: Array<string>) {
         //TODO

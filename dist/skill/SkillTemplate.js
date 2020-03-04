@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Alexa = require('ask-sdk-core');
 const SkillInputUtils_1 = require("./SkillInputUtils");
 const template_utils_1 = require("../template.utils");
+const UrlUtils_1 = require("../UrlUtils");
 class SkillTemplate {
     constructor(input) {
         this.addApl = (directive) => {
@@ -13,6 +14,45 @@ class SkillTemplate {
         this.input = input;
         this.hasDisplay = new SkillInputUtils_1.SkillInputUtils(input).supportsDisplay();
         this.hasApl = input.requestEnvelope.context.System.device.supportedInterfaces['Alexa.Presentation.APL'] ? true : false;
+    }
+    addBackground(title, subtitle, img, backgroundImg) {
+        const directive = this.input.responseBuilder.getResponse().directives[0];
+        directive.audioItem['metadata'] = {
+            title: title,
+            subtitle: subtitle
+        };
+        if (img) {
+            directive.audioItem['metadata'].art = {
+                contentDescription: title,
+                sources: [{
+                        url: UrlUtils_1.formatUrlHttps(img)
+                    }]
+            };
+        }
+        if (backgroundImg) {
+            directive.audioItem['metadata'].backgroundImage = {
+                contentDescription: title,
+                sources: [{
+                        url: UrlUtils_1.formatUrlHttps(img)
+                    }]
+            };
+        }
+    }
+    playAudio(url, title, subtitle, img, backgroundImg, token, offset) {
+        this.input.responseBuilder
+            .addAudioPlayerPlayDirective('REPLACE_ALL', UrlUtils_1.formatUrlHttps(url), token, offset)
+            .withShouldEndSession(true);
+        if (this.hasDisplay) {
+            this.addBackground(title, subtitle, img, backgroundImg);
+        }
+    }
+    playLater(url, title, subtitle, img, backgroundImg, token, offset) {
+        this.input.responseBuilder
+            .addAudioPlayerPlayDirective('REPLACE_ENQUEUED', UrlUtils_1.formatUrlHttps(url), token, offset)
+            .withShouldEndSession(true);
+        if (this.hasDisplay) {
+            this.addBackground(title, subtitle, img, backgroundImg);
+        }
     }
     suggestions(suggestions) {
         //TODO
