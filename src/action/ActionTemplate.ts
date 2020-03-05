@@ -94,7 +94,7 @@ export class ActionTemplate implements Template {
         items.forEach(i => {
             const syn = (i.synonyms && i.synonyms.length > 0)? i.synonyms : [i.key, i.value];
             it[i.key] = {
-                synonyms: syn,
+                synonyms: Array.from(new Set(syn)),
                 title: i.value,
                 description: i.value2,
                 icon: i.icon
