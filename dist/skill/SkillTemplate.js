@@ -54,6 +54,11 @@ class SkillTemplate {
             this.addBackground(title, subtitle, img, backgroundImg);
         }
     }
+    stopAudio(close) {
+        this.input.responseBuilder
+            .addAudioPlayerStopDirective()
+            .withShouldEndSession(close);
+    }
     suggestions(suggestions) {
         //TODO
     }

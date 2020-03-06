@@ -24,6 +24,10 @@ class ActionTemplate {
     playLater(url, title, subtitle, img, backgroundImg, token, offset) {
         //TODO
     }
+    stopAudio(close) {
+        //TODO
+        this.input.close();
+    }
     card(title, message, image) {
         this.input.ask(this.basicCard(title, message, image));
     }

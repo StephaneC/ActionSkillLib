@@ -20,4 +20,5 @@ export interface Template {
     card(title: string, message: string, image: string): any;
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): any;
     playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): any;
+    stopAudio(close: boolean): any;
 }

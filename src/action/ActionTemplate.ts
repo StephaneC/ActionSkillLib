@@ -32,6 +32,11 @@ export class ActionTemplate implements Template {
         //TODO
     }
 
+    stopAudio(close: boolean) {
+        //TODO
+        this.input.close();
+    }
+
     card(title: string, message: string, image: string) {
         this.input.ask(this.basicCard(title, message, image));
     }

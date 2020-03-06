@@ -61,6 +61,13 @@ export class SkillTemplate implements Template {
         }
     }
 
+    stopAudio(close: boolean) {
+        this.input.responseBuilder
+            .addAudioPlayerStopDirective()
+            .withShouldEndSession(close);
+
+    }
+
 
     suggestions(suggestions: Array<string>) {
         //TODO

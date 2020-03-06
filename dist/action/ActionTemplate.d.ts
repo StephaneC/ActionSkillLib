@@ -6,6 +6,7 @@ export declare class ActionTemplate implements Template {
     constructor(input: DialogflowConversation);
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
     playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
+    stopAudio(close: boolean): void;
     card(title: string, message: string, image: string): void;
     suggestions(suggestions: Array<string>): void;
     simpleMessage(message: string, reprompt: string, close: boolean): void;

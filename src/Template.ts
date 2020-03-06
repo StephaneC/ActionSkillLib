@@ -15,5 +15,5 @@ export interface Template {
 
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number);
     playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number);
-
+    stopAudio(close: boolean);
 }
