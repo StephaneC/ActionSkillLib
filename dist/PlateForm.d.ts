@@ -7,8 +7,8 @@ import { UserStorage } from "./UserStorage";
 import { DynamicEntities } from "./DynamicEntities";
 import { InAppPurchase } from "./InAppPurchase";
 export declare enum PLATEFORM {
-    ACTION = 0,
-    ALEXA = 1
+    ACTION = "ACTION",
+    ALEXA = "ALEXA"
 }
 export declare class Plateform {
     readonly input: HandlerInput | DialogflowConversation;

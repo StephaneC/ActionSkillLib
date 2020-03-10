@@ -15,8 +15,8 @@ const InAppPurchase_1 = require("./skill/InAppPurchase");
 const ActionInAppPurchase_1 = require("./action/ActionInAppPurchase");
 var PLATEFORM;
 (function (PLATEFORM) {
-    PLATEFORM[PLATEFORM["ACTION"] = 0] = "ACTION";
-    PLATEFORM[PLATEFORM["ALEXA"] = 1] = "ALEXA";
+    PLATEFORM["ACTION"] = "ACTION";
+    PLATEFORM["ALEXA"] = "ALEXA";
 })(PLATEFORM = exports.PLATEFORM || (exports.PLATEFORM = {}));
 ;
 class Plateform {

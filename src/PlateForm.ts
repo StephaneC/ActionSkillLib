@@ -19,7 +19,7 @@ import { InAppPurchase } from "./InAppPurchase";
 import { SkillInAppPurchase } from "./skill/InAppPurchase";
 import { ActionInAppPurchase } from "./action/ActionInAppPurchase";
 
-export enum PLATEFORM { ACTION, ALEXA };
+export enum PLATEFORM { ACTION = 'ACTION', ALEXA = 'ALEXA' };
 
 export class Plateform {
     readonly input: HandlerInput| DialogflowConversation;
