@@ -74,6 +74,11 @@ export class SkillTemplate implements Template {
         }
     }
 
+    askNotification() {
+        const permissions = ['alexa::devices:all:notifications:write'];
+        this.input.responseBuilder.withAskForPermissionsConsentCard(permissions);
+    }
+
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number) {
         this.input.responseBuilder
             .addAudioPlayerPlayDirective('REPLACE_ALL', formatUrlHttps(url), token, offset)

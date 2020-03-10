@@ -1,4 +1,4 @@
-import { DynamicEntities, Entity } from '../DynamicEntities';
+import { DynamicEntities, Entities, Entity } from '../DynamicEntities';
 import { DialogflowConversation, GoogleCloudDialogflowV2WebhookResponse } from 'actions-on-google';
 
 interface SessionEntityType {
@@ -14,7 +14,7 @@ interface ResponseBody extends GoogleCloudDialogflowV2WebhookResponse {
 }
 
 
-export class ActionEntities implements DynamicEntities {
+export class ActionEntities implements DynamicEntities, Entities {
 
     input: DialogflowConversation;
 
@@ -41,6 +41,12 @@ export class ActionEntities implements DynamicEntities {
         });
         console.log('Session Entities:' + JSON.stringify(mappedEntity))
         return mappedEntity;
+    }
+
+    get(slotName: string): string {
+        const params = this.input.parameters;
+        const entity = params[slotName];
+        return (entity)? entity as string : null;
     }
 
     /**

@@ -25,6 +25,20 @@ Here is the [actions doc about reprompt](https://developers.google.com/assistant
     });
 `
 
+## Permission
+1. Notifications
+Use the askNotification in template, 
+then:
+`app.intent('actions.intent.PERMISSION', conv => {
+  const granted = conv.arguments.get('PERMISSION')
+  if (granted) {
+    conv.close(`Great, I'll send an update whenever I notice a change`)
+  } else {
+    // Response shows that user did not grant permission
+    conv.close('Alright, just let me know whenever you need the weather!')
+  }
+})`
+
 
 ## TODO
 * [] ISP for Actions

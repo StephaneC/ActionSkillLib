@@ -7,6 +7,9 @@ export interface Entity {
         name: string;
     }>;
 }
+export interface Entities {
+    get(key: string): string;
+}
 export interface DynamicEntities {
     updateEntities(entities: Array<Entity>): any;
     deleteEntity(entity: any): any;

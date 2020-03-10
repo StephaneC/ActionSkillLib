@@ -10,6 +10,11 @@ class ActionTemplate {
         this.input = input;
         this.hasDisplay = this.input.screen;
     }
+    askNotification() {
+        this.input.ask(new actionssdk_1.UpdatePermission({
+            intent: 'Notification',
+        }));
+    }
     playAudio(url, title, subtitle, img, backgroundImg, token, offset) {
         this.input.ask(new actions_on_google_1.MediaObject({
             name: title,

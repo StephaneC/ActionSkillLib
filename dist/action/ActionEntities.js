@@ -24,6 +24,11 @@ class ActionEntities {
         console.log('Session Entities:' + JSON.stringify(mappedEntity));
         return mappedEntity;
     }
+    get(slotName) {
+        const params = this.input.parameters;
+        const entity = params[slotName];
+        return (entity) ? entity : null;
+    }
     /**
      * WARNING: Always end with this.
      * If you add stuff in your conversation next, it won't work.

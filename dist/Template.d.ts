@@ -19,7 +19,12 @@ export interface Template {
     }): void;
     error(msg: string): void;
     card(title: string, message: string, image: string): any;
+    /** audio */
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): any;
     playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): any;
     stopAudio(close: boolean): any;
+    /**
+     * Notification card will be send to Amazon app
+     */
+    askNotification(): any;
 }

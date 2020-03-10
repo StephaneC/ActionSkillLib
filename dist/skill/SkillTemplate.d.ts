@@ -14,6 +14,7 @@ export declare class SkillTemplate implements Template {
      */
     private checkHasRoundScreen;
     private addBackground;
+    askNotification(): void;
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
     playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
     stopAudio(close: boolean): void;

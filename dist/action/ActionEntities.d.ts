@@ -1,9 +1,10 @@
-import { DynamicEntities, Entity } from '../DynamicEntities';
+import { DynamicEntities, Entities, Entity } from '../DynamicEntities';
 import { DialogflowConversation } from 'actions-on-google';
-export declare class ActionEntities implements DynamicEntities {
+export declare class ActionEntities implements DynamicEntities, Entities {
     input: DialogflowConversation;
     constructor(input: DialogflowConversation);
     private mapEntity;
+    get(slotName: string): string;
     /**
      * WARNING: Always end with this.
      * If you add stuff in your conversation next, it won't work.

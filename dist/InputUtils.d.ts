@@ -1,4 +1,5 @@
 export interface InputUtils {
+    /** @Deprecated */
     getEntity(key: string): string;
     getClicked(): any;
     getOffsetInMilliseconds(): number;

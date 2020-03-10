@@ -63,6 +63,10 @@ class SkillTemplate {
             };
         }
     }
+    askNotification() {
+        const permissions = ['alexa::devices:all:notifications:write'];
+        this.input.responseBuilder.withAskForPermissionsConsentCard(permissions);
+    }
     playAudio(url, title, subtitle, img, backgroundImg, token, offset) {
         this.input.responseBuilder
             .addAudioPlayerPlayDirective('REPLACE_ALL', UrlUtils_1.formatUrlHttps(url), token, offset)

@@ -1,6 +1,6 @@
 import { Template } from "../Template";
 import { DialogflowConversation, MediaObject, Image, List } from "actions-on-google";
-import { BasicCard, Suggestions, HtmlResponse } from "actions-on-google/dist/service/actionssdk";
+import { BasicCard, Suggestions, HtmlResponse, UpdatePermission } from "actions-on-google/dist/service/actionssdk";
 import { addSpeakBalise, isAudio } from "../template.utils";
 import { formatUrlHttps } from "../UrlUtils";
 
@@ -14,7 +14,14 @@ export class ActionTemplate implements Template {
     constructor(input: DialogflowConversation) {
         this.input = input;
         this.hasDisplay = this.input.screen;
-    }    
+    } 
+
+    askNotification() {
+        this.input.ask(new UpdatePermission({
+            intent: 'Notification',
+          }));        
+    }
+       
 
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number) {
         this.input.ask(new MediaObject({
