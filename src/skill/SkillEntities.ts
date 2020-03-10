@@ -1,9 +1,9 @@
-import { DynamicEntities, Entities, Entity } from '../DynamicEntities';
+import { DynamicEntities, Entity } from '../DynamicEntities';
 import { HandlerInput } from 'ask-sdk';
 import { Directive } from 'ask-sdk-model';
 import { IntentRequest } from "ask-sdk-model";
 
-export class SkillEntities implements DynamicEntities, Entities {
+export class SkillEntities implements DynamicEntities {
 
     input: HandlerInput;
 

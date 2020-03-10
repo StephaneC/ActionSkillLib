@@ -1,4 +1,4 @@
-import { DynamicEntities, Entities, Entity } from '../DynamicEntities';
+import { DynamicEntities, Entity } from '../DynamicEntities';
 import { DialogflowConversation, GoogleCloudDialogflowV2WebhookResponse } from 'actions-on-google';
 
 interface SessionEntityType {
@@ -14,7 +14,7 @@ interface ResponseBody extends GoogleCloudDialogflowV2WebhookResponse {
 }
 
 
-export class ActionEntities implements DynamicEntities, Entities {
+export class ActionEntities implements DynamicEntities {
 
     input: DialogflowConversation;
 

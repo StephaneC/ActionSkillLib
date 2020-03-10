@@ -1,6 +1,6 @@
-import { DynamicEntities, Entities, Entity } from '../DynamicEntities';
+import { DynamicEntities, Entity } from '../DynamicEntities';
 import { DialogflowConversation } from 'actions-on-google';
-export declare class ActionEntities implements DynamicEntities, Entities {
+export declare class ActionEntities implements DynamicEntities {
     input: DialogflowConversation;
     constructor(input: DialogflowConversation);
     private mapEntity;

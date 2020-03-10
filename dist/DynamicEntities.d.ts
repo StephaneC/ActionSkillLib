@@ -10,7 +10,7 @@ export interface Entity {
 export interface Entities {
     get(key: string): string;
 }
-export interface DynamicEntities {
+export interface DynamicEntities extends Entities {
     updateEntities(entities: Array<Entity>): any;
     deleteEntity(entity: any): any;
 }
