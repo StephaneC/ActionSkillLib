@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Alexa = require('ask-sdk-core');
 const template_utils_1 = require("../template.utils");
 const UrlUtils_1 = require("../UrlUtils");
+const skill_template_utils_1 = require("./skill.template.utils");
 class SkillTemplate {
     constructor(input) {
         this.addApl = (directive) => {
@@ -12,33 +13,8 @@ class SkillTemplate {
         };
         this.input = input;
         this.hasApl = input.requestEnvelope.context.System.device.supportedInterfaces['Alexa.Presentation.APL'] ? true : false;
-        this.hasDisplay = this.supportsDisplay();
-        this.hasRoundScreen = this.checkHasRoundScreen();
-    }
-    supportsDisplay() {
-        const event = this.input.requestEnvelope;
-        const hasDisplay = event &&
-            event.context &&
-            event.context.System &&
-            event.context.System.device &&
-            event.context.System.device.supportedInterfaces &&
-            "Display" in event.context.System.device.supportedInterfaces;
-        console.log(`peripherique has display = ${hasDisplay}`);
-        return hasDisplay;
-    }
-    /**
-     * @deprecated
-     * use template
-     */
-    checkHasRoundScreen() {
-        const event = this.input.requestEnvelope;
-        const hasRoundScreen = event &&
-            event.context &&
-            event.context.Viewport &&
-            event.context.Viewport.shape &&
-            event.context.Viewport.shape === 'ROUND';
-        console.log(`peripherique has hasRoundScreen = ${hasRoundScreen}`);
-        return hasRoundScreen;
+        this.hasDisplay = skill_template_utils_1.supportsDisplay(input);
+        this.hasRoundScreen = skill_template_utils_1.checkHasRoundScreen(input);
     }
     addBackground(title, subtitle, img, backgroundImg) {
         const directive = this.input.responseBuilder.getResponse().directives[0];

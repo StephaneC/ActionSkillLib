@@ -7,12 +7,6 @@ export declare class SkillTemplate implements Template {
     readonly hasDisplay: boolean;
     readonly hasRoundScreen: boolean;
     constructor(input: HandlerInput);
-    private supportsDisplay;
-    /**
-     * @deprecated
-     * use template
-     */
-    private checkHasRoundScreen;
     private addBackground;
     askNotification(): void;
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
