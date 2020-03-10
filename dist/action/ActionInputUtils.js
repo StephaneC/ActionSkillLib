@@ -4,10 +4,6 @@ class ActionInputUtils {
     constructor(input) {
         this.input = input;
     }
-    supportsDisplay() {
-        // conv.surface.capabilities.has('actions.capability.SCREEN_OUTPUT')
-        return this.input.screen;
-    }
     getEntity(slotName) {
         const params = this.input.parameters;
         const entity = params[slotName];
@@ -25,8 +21,20 @@ class ActionInputUtils {
     getOffsetInMilliseconds() {
         return null;
     }
+    /**
+ *     @Deprecated
+ * use template
+ */
     hasRoundScreen() {
         return false;
+    }
+    /**
+ *     @Deprecated
+ * use template
+ */
+    supportsDisplay() {
+        // conv.surface.capabilities.has('actions.capability.SCREEN_OUTPUT')
+        return this.input.screen;
     }
     getMediaToken() {
         //TODO

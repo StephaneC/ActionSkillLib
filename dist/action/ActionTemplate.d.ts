@@ -2,7 +2,8 @@ import { Template } from "../Template";
 import { DialogflowConversation } from "actions-on-google";
 export declare class ActionTemplate implements Template {
     input: DialogflowConversation;
-    hasDisplay: boolean;
+    readonly hasDisplay: boolean;
+    readonly hasRoundScreen: boolean;
     constructor(input: DialogflowConversation);
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
     playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;

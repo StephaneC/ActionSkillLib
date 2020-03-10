@@ -1,6 +1,5 @@
 import { Template } from "../Template";
 import { DialogflowConversation, MediaObject, Image, List } from "actions-on-google";
-import { ActionInputUtils } from "./ActionInputUtils";
 import { BasicCard, Suggestions, HtmlResponse } from "actions-on-google/dist/service/actionssdk";
 import { addSpeakBalise, isAudio } from "../template.utils";
 import { formatUrlHttps } from "../UrlUtils";
@@ -9,12 +8,13 @@ import { formatUrlHttps } from "../UrlUtils";
 export class ActionTemplate implements Template {
 
     input: DialogflowConversation;
-    hasDisplay: boolean;
+    readonly hasDisplay: boolean;
+    readonly hasRoundScreen: boolean = false;
 
     constructor(input: DialogflowConversation) {
         this.input = input;
-        this.hasDisplay = new ActionInputUtils(input).supportsDisplay();
-    }
+        this.hasDisplay = this.input.screen;
+    }    
 
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number) {
         this.input.ask(new MediaObject({

@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const actions_on_google_1 = require("actions-on-google");
-const ActionInputUtils_1 = require("./ActionInputUtils");
 const actionssdk_1 = require("actions-on-google/dist/service/actionssdk");
 const template_utils_1 = require("../template.utils");
 const UrlUtils_1 = require("../UrlUtils");
 class ActionTemplate {
     constructor(input) {
+        this.hasRoundScreen = false;
         this.input = input;
-        this.hasDisplay = new ActionInputUtils_1.ActionInputUtils(input).supportsDisplay();
+        this.hasDisplay = this.input.screen;
     }
     playAudio(url, title, subtitle, img, backgroundImg, token, offset) {
         this.input.ask(new actions_on_google_1.MediaObject({

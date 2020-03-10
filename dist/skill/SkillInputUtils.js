@@ -29,17 +29,6 @@ class SkillInputUtils {
             "Alexa.Presentation.APL" in event.context.System.device.supportedInterfaces;
         return hasapl;
     }
-    supportsDisplay() {
-        const event = this.input.requestEnvelope;
-        const hasDisplay = event &&
-            event.context &&
-            event.context.System &&
-            event.context.System.device &&
-            event.context.System.device.supportedInterfaces &&
-            "Display" in event.context.System.device.supportedInterfaces;
-        console.log(`peripherique has display = ${hasDisplay}`);
-        return hasDisplay;
-    }
     /** retrieve Entity Id, If no Id, get value */
     getEntity(slotName) {
         const event = this.input.requestEnvelope.request;
@@ -73,6 +62,25 @@ class SkillInputUtils {
         }
         return null;
     }
+    /**
+ * @deprecated
+ * use template
+ */
+    supportsDisplay() {
+        const event = this.input.requestEnvelope;
+        const hasDisplay = event &&
+            event.context &&
+            event.context.System &&
+            event.context.System.device &&
+            event.context.System.device.supportedInterfaces &&
+            "Display" in event.context.System.device.supportedInterfaces;
+        console.log(`peripherique has display = ${hasDisplay}`);
+        return hasDisplay;
+    }
+    /**
+     * @deprecated
+     * use template
+     */
     hasRoundScreen() {
         const event = this.input.requestEnvelope;
         const hasRoundScreen = event &&

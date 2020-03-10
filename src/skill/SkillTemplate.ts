@@ -3,20 +3,51 @@ import { Directive } from 'ask-sdk-model';
 import { interfaces } from 'ask-sdk-model';
 import { HandlerInput } from 'ask-sdk';
 import { Template } from '../Template';
-import { SkillInputUtils } from './SkillInputUtils';
 import { addSpeakBalise, isAudio, adaptAudioTagSSMLToAlexa } from '../template.utils';
 import { formatUrlHttps } from '../UrlUtils';
 
 export class SkillTemplate implements Template {
 
     input: HandlerInput;
-    hasDisplay: boolean;
     hasApl: boolean;
+    readonly hasDisplay: boolean;
+    readonly hasRoundScreen: boolean;
+
 
     constructor(input: HandlerInput) {
         this.input = input;
-        this.hasDisplay = new SkillInputUtils(input).supportsDisplay();
         this.hasApl = input.requestEnvelope.context.System.device.supportedInterfaces['Alexa.Presentation.APL'] ? true : false;
+        this.hasDisplay = this.supportsDisplay();
+        this.hasRoundScreen = this.checkHasRoundScreen();
+    }
+
+    private supportsDisplay(): boolean {
+        const event = this.input.requestEnvelope;
+        const hasDisplay =
+            event &&
+            event.context &&
+            event.context.System &&
+            event.context.System.device &&
+            event.context.System.device.supportedInterfaces &&
+            "Display" in event.context.System.device.supportedInterfaces;
+        console.log(`peripherique has display = ${hasDisplay}`);
+        return hasDisplay;
+    }
+
+    /**
+     * @deprecated
+     * use template
+     */
+    private checkHasRoundScreen() {
+        const event = this.input.requestEnvelope;
+        const hasRoundScreen =
+            event &&
+            event.context &&
+            event.context.Viewport &&
+            event.context.Viewport.shape &&
+            event.context.Viewport.shape === 'ROUND';
+        console.log(`peripherique has hasRoundScreen = ${hasRoundScreen}`);
+        return hasRoundScreen;
     }
 
     private addBackground(title: string, subtitle: string, img: string, backgroundImg: string) {

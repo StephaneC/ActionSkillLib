@@ -8,12 +8,7 @@ export class ActionInputUtils implements InputUtils {
     constructor(input: DialogflowConversation) {
         this.input = input;
     }
-    
 
-    supportsDisplay(): boolean {
-        // conv.surface.capabilities.has('actions.capability.SCREEN_OUTPUT')
-        return this.input.screen;
-    }
 
     getEntity(slotName: string): string {
         const params = this.input.parameters;
@@ -35,8 +30,21 @@ export class ActionInputUtils implements InputUtils {
         return null;
     }
 
+        /**
+     *     @Deprecated
+     * use template
+     */
     hasRoundScreen() {
         return false;
+    }
+
+        /**
+     *     @Deprecated
+     * use template
+     */
+    supportsDisplay(): boolean {
+        // conv.surface.capabilities.has('actions.capability.SCREEN_OUTPUT')
+        return this.input.screen;
     }
 
     getMediaToken() {

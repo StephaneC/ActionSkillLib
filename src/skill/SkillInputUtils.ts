@@ -22,19 +22,6 @@ export class SkillInputUtils implements InputUtils {
         return hasapl;
     }
 
-    supportsDisplay(): boolean {
-        const event = this.input.requestEnvelope;
-        const hasDisplay =
-            event &&
-            event.context &&
-            event.context.System &&
-            event.context.System.device &&
-            event.context.System.device.supportedInterfaces &&
-            "Display" in event.context.System.device.supportedInterfaces;
-        console.log(`peripherique has display = ${hasDisplay}`);
-        return hasDisplay;
-    }
-
     /** retrieve Entity Id, If no Id, get value */
     getEntity(slotName: string) {
         const event = this.input.requestEnvelope.request as IntentRequest;
@@ -70,6 +57,27 @@ export class SkillInputUtils implements InputUtils {
         return null;
     }
 
+        /**
+     * @deprecated
+     * use template
+     */
+    supportsDisplay(): boolean {
+        const event = this.input.requestEnvelope;
+        const hasDisplay =
+            event &&
+            event.context &&
+            event.context.System &&
+            event.context.System.device &&
+            event.context.System.device.supportedInterfaces &&
+            "Display" in event.context.System.device.supportedInterfaces;
+        console.log(`peripherique has display = ${hasDisplay}`);
+        return hasDisplay;
+    }
+
+    /**
+     * @deprecated
+     * use template
+     */
     hasRoundScreen() {
         const event = this.input.requestEnvelope;
         const hasRoundScreen =

@@ -3,9 +3,16 @@ import { HandlerInput } from 'ask-sdk';
 import { Template } from '../Template';
 export declare class SkillTemplate implements Template {
     input: HandlerInput;
-    hasDisplay: boolean;
     hasApl: boolean;
+    readonly hasDisplay: boolean;
+    readonly hasRoundScreen: boolean;
     constructor(input: HandlerInput);
+    private supportsDisplay;
+    /**
+     * @deprecated
+     * use template
+     */
+    private checkHasRoundScreen;
     private addBackground;
     playAudio(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;
     playLater(url: string, title: string, subtitle: string, img: string, backgroundImg: string, token: string, offset: number): void;

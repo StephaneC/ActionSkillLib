@@ -2,7 +2,8 @@ import { HandlerInput } from 'ask-sdk';
 import { DialogflowConversation } from 'actions-on-google';
 export interface Template {
     input: HandlerInput | DialogflowConversation;
-    hasDisplay: boolean;
+    readonly hasDisplay: boolean;
+    readonly hasRoundScreen: boolean;
     /** Simple templates */
     simpleMessage(message: string, reprompt: string, close: boolean): void;
     suggestions(suggestions: Array<string>): any;

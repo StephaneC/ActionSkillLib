@@ -3,7 +3,8 @@ import { DialogflowConversation } from 'actions-on-google';
 
 export interface Template {
     input: HandlerInput | DialogflowConversation;
-    hasDisplay: boolean;
+    readonly hasDisplay: boolean;
+    readonly hasRoundScreen: boolean;
 
 
     /** Simple templates */
