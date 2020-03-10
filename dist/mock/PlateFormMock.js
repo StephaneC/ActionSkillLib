@@ -3,19 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const PlateForm_1 = require("../PlateForm");
 const SessionStorageMock_1 = require("./SessionStorageMock");
 const UserStorageMock_1 = require("./UserStorageMock");
-var PLATEFORM;
-(function (PLATEFORM) {
-    PLATEFORM[PLATEFORM["ACTION"] = 0] = "ACTION";
-    PLATEFORM[PLATEFORM["ALEXA"] = 1] = "ALEXA";
-})(PLATEFORM = exports.PLATEFORM || (exports.PLATEFORM = {}));
-;
 class PlateformMock extends PlateForm_1.Plateform {
     constructor(input) {
         super(input);
         this.speak = [];
         this.userStorage = new UserStorageMock_1.UserStorageMock();
         this.sessionStorage = new SessionStorageMock_1.SessionStorageMock();
-        if (this.type === PLATEFORM.ALEXA) {
+        if (this.type === PlateForm_1.PLATEFORM.ALEXA) {
             input["responseBuilder"] = {
                 addRenderTemplateDirective: () => {
                     //TODO

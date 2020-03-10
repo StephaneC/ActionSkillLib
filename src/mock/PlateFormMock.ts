@@ -5,11 +5,9 @@ import { InputUtils } from "../InputUtils";
 import { SessionStorage } from "../SessionStorage";
 import { UserStorage } from "../UserStorage";
 import { DynamicEntities } from "../DynamicEntities";
-import { Plateform } from "../PlateForm";
+import { Plateform, PLATEFORM } from "../PlateForm";
 import { SessionStorageMock } from "./SessionStorageMock";
 import { UserStorageMock } from "./UserStorageMock";
-
-export enum PLATEFORM { ACTION, ALEXA };
 
 export class PlateformMock extends Plateform {
     readonly input: HandlerInput| DialogflowConversation;

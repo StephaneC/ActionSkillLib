@@ -5,11 +5,7 @@ import { InputUtils } from "../InputUtils";
 import { SessionStorage } from "../SessionStorage";
 import { UserStorage } from "../UserStorage";
 import { DynamicEntities } from "../DynamicEntities";
-import { Plateform } from "../PlateForm";
-export declare enum PLATEFORM {
-    ACTION = 0,
-    ALEXA = 1
-}
+import { Plateform, PLATEFORM } from "../PlateForm";
 export declare class PlateformMock extends Plateform {
     readonly input: HandlerInput | DialogflowConversation;
     readonly type: PLATEFORM;
