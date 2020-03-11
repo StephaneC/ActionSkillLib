@@ -20,6 +20,7 @@ export interface Template {
     /* Notifications */
     /**
      * Notification card will be send to Amazon app
+     * intentName : mandatory for google
      */
-    askNotification();
+    askNotification(intentName?: string);
 }

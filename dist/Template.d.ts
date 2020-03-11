@@ -25,6 +25,7 @@ export interface Template {
     stopAudio(close: boolean): any;
     /**
      * Notification card will be send to Amazon app
+     * intentName : mandatory for google
      */
-    askNotification(): any;
+    askNotification(intentName?: string): any;
 }

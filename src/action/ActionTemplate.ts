@@ -16,9 +16,9 @@ export class ActionTemplate implements Template {
         this.hasDisplay = this.input.screen;
     } 
 
-    askNotification() {
+    askNotification(intentName?: string) {
         this.input.ask(new UpdatePermission({
-            intent: 'Notification',
+            intent: intentName,
           }));        
     }
        

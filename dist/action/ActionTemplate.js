@@ -10,9 +10,9 @@ class ActionTemplate {
         this.input = input;
         this.hasDisplay = this.input.screen;
     }
-    askNotification() {
+    askNotification(intentName) {
         this.input.ask(new actionssdk_1.UpdatePermission({
-            intent: 'Notification',
+            intent: intentName,
         }));
     }
     playAudio(url, title, subtitle, img, backgroundImg, token, offset) {
