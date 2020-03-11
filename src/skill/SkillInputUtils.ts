@@ -10,6 +10,15 @@ export class SkillInputUtils implements InputUtils {
         this.input = input;
     }
 
+    getNotificationToken(): string {
+        try {
+            return this.input.requestEnvelope.context.System.user.permissions.consentToken;
+        } catch (e) {
+            console.log('Error getCOnsentToken', e);
+        }
+        return null;
+    }
+
     hasApl(): boolean {
         const event = this.input.requestEnvelope;
         const hasapl =

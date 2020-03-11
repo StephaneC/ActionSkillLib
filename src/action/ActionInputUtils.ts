@@ -9,6 +9,16 @@ export class ActionInputUtils implements InputUtils {
         this.input = input;
     }
 
+    getNotificationToken(): string {
+        try {
+            console.log('NotifToken ', this.input.arguments.get('UPDATES_USER_ID'));
+            return this.input.arguments.get('UPDATES_USER_ID');
+        } catch (e) {
+            console.log('Error getNotificationToken', e);
+        }
+        return null;
+    }
+
 
     getEntity(slotName: string): string {
         const params = this.input.parameters;

@@ -3,6 +3,7 @@ import { InputUtils } from "../InputUtils";
 export declare class SkillInputUtils implements InputUtils {
     input: HandlerInput;
     constructor(input: HandlerInput);
+    getNotificationToken(): string;
     hasApl(): boolean;
     /** retrieve Entity Id, If no Id, get value */
     getEntity(slotName: string): string;

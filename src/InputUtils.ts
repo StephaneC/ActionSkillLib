@@ -4,6 +4,7 @@ export interface InputUtils {
     getEntity(key: string): string; 
     getClicked();
     getOffsetInMilliseconds(): number;
+    getNotificationToken(): string;
     getMediaToken(): string;
     /**
      * @deprecated

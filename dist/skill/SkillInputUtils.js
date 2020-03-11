@@ -19,6 +19,15 @@ class SkillInputUtils {
         };
         this.input = input;
     }
+    getNotificationToken() {
+        try {
+            return this.input.requestEnvelope.context.System.user.permissions.consentToken;
+        }
+        catch (e) {
+            console.log('Error getCOnsentToken', e);
+        }
+        return null;
+    }
     hasApl() {
         const event = this.input.requestEnvelope;
         const hasapl = event &&

@@ -4,6 +4,15 @@ class ActionInputUtils {
     constructor(input) {
         this.input = input;
     }
+    getNotificationToken() {
+        try {
+            return this.input.arguments.get('UPDATES_USER_ID');
+        }
+        catch (e) {
+            console.log('Error getCOnsentToken', e);
+        }
+        return null;
+    }
     getEntity(slotName) {
         const params = this.input.parameters;
         const entity = params[slotName];

@@ -39,6 +39,19 @@ then:
   }
 })`
 
+## Tests
+There is a PlateformMock.
+To use it:
+1. home
+`new PlateformMock(new DialogflowConversation({body:YOUR_CONVERSATION_JSON}))`
+2. skill
+`
+new PlateformMock({
+                requestEnvelope: YOUR_HANDLERINPUT_JSON,
+                attributesManager: null,
+                responseBuilder: null,
+            } as HandlerInput);
+`
 
 ## TODO
 * [] ISP for Actions
