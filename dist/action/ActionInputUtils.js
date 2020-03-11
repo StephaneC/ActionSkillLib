@@ -6,10 +6,11 @@ class ActionInputUtils {
     }
     getNotificationToken() {
         try {
+            console.log('NotifToken ', this.input.arguments.get('UPDATES_USER_ID'));
             return this.input.arguments.get('UPDATES_USER_ID');
         }
         catch (e) {
-            console.log('Error getCOnsentToken', e);
+            console.log('Error getNotificationToken', e);
         }
         return null;
     }
