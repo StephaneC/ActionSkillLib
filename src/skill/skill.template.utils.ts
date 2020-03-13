@@ -11,6 +11,19 @@ export const supportsDisplay = (input): boolean => {
     return hasDisplay;
 }
 
+export const hasApl = (input): boolean => {
+    const event = input.requestEnvelope;
+    const hasApl =
+        event &&
+        event.context &&
+        event.context.System &&
+        event.context.System.device &&
+        event.context.System.device.supportedInterfaces &&
+        event.context.System.device.supportedInterfaces['Alexa.Presentation.APL'];
+
+    return hasApl;
+}
+
 /**
  * @deprecated
  * use template

@@ -5,7 +5,7 @@ import { HandlerInput } from 'ask-sdk';
 import { Template } from '../Template';
 import { addSpeakBalise, isAudio, adaptAudioTagSSMLToAlexa } from '../template.utils';
 import { formatUrlHttps } from '../UrlUtils';
-import { supportsDisplay, checkHasRoundScreen } from './skill.template.utils';
+import { supportsDisplay, checkHasRoundScreen, hasApl } from './skill.template.utils';
 
 export class SkillTemplate implements Template {
 
@@ -17,8 +17,8 @@ export class SkillTemplate implements Template {
 
     constructor(input: HandlerInput) {
         this.input = input;
-        this.hasApl = input.requestEnvelope.context.System.device.supportedInterfaces['Alexa.Presentation.APL'] ? true : false;
         this.hasDisplay = supportsDisplay(input);
+        this.hasApl = hasApl(input);
         this.hasRoundScreen = checkHasRoundScreen(input);
     }
 

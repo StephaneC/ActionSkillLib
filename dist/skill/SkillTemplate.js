@@ -12,8 +12,8 @@ class SkillTemplate {
             }
         };
         this.input = input;
-        this.hasApl = input.requestEnvelope.context.System.device.supportedInterfaces['Alexa.Presentation.APL'] ? true : false;
         this.hasDisplay = skill_template_utils_1.supportsDisplay(input);
+        this.hasApl = skill_template_utils_1.hasApl(input);
         this.hasRoundScreen = skill_template_utils_1.checkHasRoundScreen(input);
     }
     addBackground(title, subtitle, img, backgroundImg) {
