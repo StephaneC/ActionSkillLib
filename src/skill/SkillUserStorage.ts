@@ -16,7 +16,8 @@ export class SkillUserStorage implements UserStorage {
     }
 
     async getItem(key: string): Promise<any> {
-        const storage = await this.getLongTimeStorage()
+        const storage = await this.getLongTimeStorage();
+        console.log({storage});
         return storage[key];
     }
 

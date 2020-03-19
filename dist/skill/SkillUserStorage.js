@@ -25,6 +25,7 @@ class SkillUserStorage {
     }
     async getItem(key) {
         const storage = await this.getLongTimeStorage();
+        console.log({ storage });
         return storage[key];
     }
     async setItem(key, value) {
