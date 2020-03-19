@@ -23,6 +23,7 @@ export class SkillUserStorage implements UserStorage {
     async setItem(key: string, value: any): Promise<any> {
         const storage = await this.getLongTimeStorage()
         storage[key] = value;
+        await this.input.attributesManager.savePersistentAttributes();
     }
 
     private getLongTimeStorage = async (): Promise<{ [key: string]: any }> => {

@@ -26,6 +26,7 @@ class SkillUserStorage {
     async setItem(key, value) {
         const storage = await this.getLongTimeStorage();
         storage[key] = value;
+        await this.input.attributesManager.savePersistentAttributes();
     }
 }
 exports.SkillUserStorage = SkillUserStorage;
