@@ -11,5 +11,7 @@ export declare class SkillUserStorage implements UserStorage {
     getItem(key: string): Promise<any>;
     setItem(key: string, value: any): Promise<any>;
     private getLongTimeStorage;
+    /** called automatically when using ResponseInterceptor PersistenceSavingResponseInterceptor */
+    saveLongTimeStorage: () => Promise<void>;
     clear: () => Promise<void>;
 }

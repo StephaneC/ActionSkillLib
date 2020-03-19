@@ -10,6 +10,12 @@ Let's try to develope a simple framework for Assistant and Alexa Skill.
 ### npm install
 
 
+### Skill Tips
+#### User Storage
+If you use Userstorage, it uses [Persistence Manager](https://developer.amazon.com/fr-FR/docs/alexa/alexa-skills-kit-sdk-for-nodejs/manage-attributes.html). 
+So you have to add response the supplied interceptor:  
+
+
 ### Actions TIPS
 #### Reprompt 
 To uniformise Skill and Actions reprompt, we save the reprompt in sessionStorage on action when you supply one with simpleMessage.

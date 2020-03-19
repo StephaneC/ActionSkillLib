@@ -23,7 +23,6 @@ export class SkillUserStorage implements UserStorage {
     async setItem(key: string, value: any): Promise<any> {
         const storage = await this.getLongTimeStorage()
         storage[key] = value;
-        await this.input.attributesManager.savePersistentAttributes();
     }
 
     private getLongTimeStorage = async (): Promise<{ [key: string]: any }> => {
@@ -35,6 +34,11 @@ export class SkillUserStorage implements UserStorage {
             this.input.attributesManager.setPersistentAttributes(attributes);
         }
         return attributes;
+    }
+
+    /** called automatically when using ResponseInterceptor PersistenceSavingResponseInterceptor */
+    saveLongTimeStorage = async () => {
+        await this.input.attributesManager.savePersistentAttributes();
     }
 
     

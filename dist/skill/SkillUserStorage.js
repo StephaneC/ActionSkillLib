@@ -12,6 +12,10 @@ class SkillUserStorage {
             }
             return attributes;
         };
+        /** called automatically when using ResponseInterceptor PersistenceSavingResponseInterceptor */
+        this.saveLongTimeStorage = async () => {
+            await this.input.attributesManager.savePersistentAttributes();
+        };
         this.clear = async () => {
             const storage = await this.getLongTimeStorage();
             storage.started = [];
@@ -26,7 +30,6 @@ class SkillUserStorage {
     async setItem(key, value) {
         const storage = await this.getLongTimeStorage();
         storage[key] = value;
-        await this.input.attributesManager.savePersistentAttributes();
     }
 }
 exports.SkillUserStorage = SkillUserStorage;
