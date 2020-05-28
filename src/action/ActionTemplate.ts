@@ -109,7 +109,10 @@ export class ActionTemplate implements Template {
                 synonyms: Array.from(new Set(syn)),
                 title: i.value,
                 description: i.value2,
-                icon: i.icon
+                image: new Image({
+                    url: i.icon,
+                    alt: 'icon'
+                })
               }
         });
         return it;
