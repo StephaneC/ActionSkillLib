@@ -92,7 +92,10 @@ class ActionTemplate {
                 synonyms: Array.from(new Set(syn)),
                 title: i.value,
                 description: i.value2,
-                icon: i.icon
+                image: new actions_on_google_1.Image({
+                    url: i.icon,
+                    alt: 'icon'
+                })
             };
         });
         return it;
