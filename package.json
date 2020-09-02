@@ -1,6 +1,6 @@
 {
   "name": "SkillActionLib",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "./dist/index.js",
   "types": "dist/index.d.js",
@@ -11,7 +11,12 @@
     "tsc": "tsc"
   },
   "licence": "Apache Licence 2.0",
-  "keywords": ["Alexa", "Action", "Voice", "Assistant"],
+  "keywords": [
+    "Alexa",
+    "Action",
+    "Voice",
+    "Assistant"
+  ],
   "author": "Stéphane Castrec",
   "repository": {
     "type": "git",

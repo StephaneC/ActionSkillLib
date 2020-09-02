@@ -1,7 +1,7 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-        "alwaysStrict" : true,
+        "alwaysStrict": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "declaration": true,
@@ -10,13 +10,18 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "dist",
-        "rootDir": "./src",
         "noUnusedLocals": true,
         "noUnusedParameters": false,
-        "allowSyntheticDefaultImports": true      
-    },    
+        "allowSyntheticDefaultImports": true
+    },
+    "include": [
+        "**/*.d.ts",
+        "src/**/*",
+        "test/**/*"
+    ],
     "exclude": [
-        "test",
-        "node_modules"
+        "dist/**/*",
+        "node_modules/**/*",
+        "**/*.spec.ts"
     ]
 }
