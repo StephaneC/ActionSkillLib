@@ -3,7 +3,7 @@
 import 'mocha';
 import { assert } from 'chai';
 import { HandlerInput } from 'ask-sdk';
-import { Plateform } from '../../src/PlateForm';
+import { Plateform } from '@/PlateForm';
 
 import * as aplTouchMock from '../mock/skill/apl_touch.json';
 import * as touchCorrectResponse from '../mock/skill/response_touch.json';

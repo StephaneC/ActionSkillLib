@@ -3,7 +3,7 @@
 import 'mocha';
 import { assert } from 'chai';
 import { DialogflowConversation } from 'actions-on-google';
-import { PlateformMock } from '../../src/mock/PlateformMock';
+import { PlateformMock } from '@/mock/PlateformMock';
 
 import * as notificationToken from '../mock/home/notificationToken.json';
 
