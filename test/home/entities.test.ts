@@ -4,7 +4,7 @@ import 'mocha';
 import { assert } from 'chai';
 
 import * as entitiePodcast from '../mock/home/entitiePodcast.json';
-import { PlateformMock } from '@/mock/PlateformMock';
+import { PlateformMock } from '@/mock';
 import { DialogflowConversation } from 'actions-on-google';
 
 describe('Entities utils tests', () => {
