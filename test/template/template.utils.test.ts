@@ -2,7 +2,10 @@
 
 import 'mocha';
 import { assert } from 'chai';
-import { isAudio, addSpeakBalise, audioFormat, adaptAudioTagSSMLToAlexa } from '@/template.utils';
+import { isAudio,
+    addSpeakBalise,
+    audioFormat,
+    adaptAudioTagSSMLToAlexa } from '../../src/template.utils';
 
 
 describe('template utils tests', () => {

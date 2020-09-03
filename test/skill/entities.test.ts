@@ -3,7 +3,7 @@
 import 'mocha';
 import { assert } from 'chai';
 import { HandlerInput } from 'ask-sdk';
-import { Plateform } from '@/PlateForm';
+import { Plateform } from '../../src/PlateForm';
 
 import * as speakCorrectResponse from '../mock/skill/response_speak.json';
 
