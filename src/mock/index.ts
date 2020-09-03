@@ -1,1 +1,1 @@
-export { PlateformMock } from "./PlateformMock";
+export { PlateformMock } from "./PlateFormMock";
