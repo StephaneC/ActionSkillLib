@@ -1,6 +1,7 @@
 # SkillActionFramework
 <p>
-<a href="https://travis-ci.org/github/StephaneC/ActionSkillLib" target="_blank"><img src="https://travis-ci.org/github/StephaneC/ActionSkillLib.svg?branch=master"></a>
+
+[![Build Status](https://travis-ci.org/StephaneC/ActionSkillLib.svg?branch=master)](https://travis-ci.org/StephaneC/ActionSkillLib)
 <a href="https://twitter.com/intent/tweet?text=Simplify your #voicefirst app. Build cross-platform voice apps for Alexa and Google Assistant with ActionSkillLib https://github.com/StephaneC/ActionSkillLib/" target="_blank"><img src="https://img.shields.io/twitter/url/http/shields.io.svg?style=social"></a>
 </p>
 
