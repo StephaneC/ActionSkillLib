@@ -1,0 +1,1 @@
+export { PlateformMock } from "./PlateFormMock";
