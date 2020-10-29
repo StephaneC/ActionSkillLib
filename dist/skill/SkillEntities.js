@@ -20,6 +20,18 @@ class SkillEntities {
         };
         this.input = input;
     }
+    getValue(slotName) {
+        const event = this.input.requestEnvelope.request;
+        if (event.intent && event.intent.slots &&
+            event.intent.slots[slotName]) {
+            let value = this.checkResolutionsValue(event.intent.slots[slotName]);
+            if (value) {
+                return value.name;
+            }
+            return event.intent.slots[slotName].value;
+        }
+        return null;
+    }
     /** retrieve Entity Id, If no Id, get value */
     get(slotName) {
         const event = this.input.requestEnvelope.request;

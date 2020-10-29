@@ -9,6 +9,7 @@ export interface Entity {
 }
 export interface Entities {
     get(key: string): string;
+    getValue(key: string): string;
 }
 export interface DynamicEntities extends Entities {
     updateEntities(entities: Array<Entity>): any;

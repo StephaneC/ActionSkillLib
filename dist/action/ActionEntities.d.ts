@@ -5,6 +5,7 @@ export declare class ActionEntities implements DynamicEntities {
     constructor(input: DialogflowConversation);
     private mapEntity;
     get(slotName: string): string;
+    getValue(slotName: string): string;
     /**
      * WARNING: Always end with this.
      * If you add stuff in your conversation next, it won't work.

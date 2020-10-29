@@ -11,6 +11,19 @@ export class SkillEntities implements DynamicEntities {
         this.input = input;
     }
 
+    public getValue(slotName: string) {
+        const event = this.input.requestEnvelope.request as IntentRequest;
+        if (event.intent && event.intent.slots &&
+            event.intent.slots[slotName]) {
+            let value = this.checkResolutionsValue(event.intent.slots[slotName]);
+            if (value) {
+                return value.name
+            }
+            return event.intent.slots[slotName].value;
+        }
+        return null;
+    }
+
     /** retrieve Entity Id, If no Id, get value */
     public get(slotName: string) {
         const event = this.input.requestEnvelope.request as IntentRequest;

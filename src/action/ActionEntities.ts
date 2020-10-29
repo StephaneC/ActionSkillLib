@@ -48,6 +48,12 @@ export class ActionEntities implements DynamicEntities {
         const entity = params[slotName];
         return (entity)? entity as string : null;
     }
+    //TODO Fixme
+    getValue(slotName: string): string {
+        const params = this.input.parameters;
+        const entity = params[slotName];
+        return (entity)? entity as string : null;
+    }
 
     /**
      * WARNING: Always end with this.

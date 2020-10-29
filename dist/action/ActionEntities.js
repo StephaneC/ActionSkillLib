@@ -30,6 +30,12 @@ class ActionEntities {
         const entity = params[slotName];
         return (entity) ? entity : null;
     }
+    //TODO Fixme
+    getValue(slotName) {
+        const params = this.input.parameters;
+        const entity = params[slotName];
+        return (entity) ? entity : null;
+    }
     /**
      * WARNING: Always end with this.
      * If you add stuff in your conversation next, it won't work.

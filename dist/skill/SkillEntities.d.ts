@@ -3,6 +3,7 @@ import { HandlerInput } from 'ask-sdk';
 export declare class SkillEntities implements DynamicEntities {
     input: HandlerInput;
     constructor(input: HandlerInput);
+    getValue(slotName: string): string;
     /** retrieve Entity Id, If no Id, get value */
     get(slotName: string): string;
     private checkResolutionsValue;
