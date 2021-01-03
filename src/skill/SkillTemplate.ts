@@ -121,7 +121,7 @@ export class SkillTemplate implements Template {
                     ],
                     "mainTemplate": {
                         "parameters": [
-                            "textListData"
+                            "listItems"
                         ],
                         "items": [
                             {
@@ -154,7 +154,7 @@ export class SkillTemplate implements Template {
                                         tokenTouch
                                     ]
                                 },
-                                "listItems": "${" + JSON.stringify(items.map(this.mapAplItems)) + "}"
+                                "listItems": items.map(this.mapAplItems)
                             }
                         ]
                     }
