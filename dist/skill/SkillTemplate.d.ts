@@ -16,7 +16,8 @@ export declare class SkillTemplate implements Template {
     card(title: string, message: string, image: string): void;
     simpleMessage(message: string, reprompt: string, close: boolean): void;
     /**
-     * Add list only if hasDisplay
+     * Add list only if hasAPL or hasDisplay
+     * First, try APL, then display which is deprecated
      * @param title
      * @param tokenTouch
      * @param items
@@ -29,8 +30,9 @@ export declare class SkillTemplate implements Template {
     }>, backgroundImage?: {
         url: string;
         desc: string;
-    }): void;
+    }, backgroundColor?: string): void;
     addApl: (directive: Directive) => void;
     error(): void;
     private mapItems;
+    private mapAplItems;
 }

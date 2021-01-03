@@ -82,13 +82,69 @@ class SkillTemplate {
             .withShouldEndSession(close);
     }
     /**
-     * Add list only if hasDisplay
+     * Add list only if hasAPL or hasDisplay
+     * First, try APL, then display which is deprecated
      * @param title
      * @param tokenTouch
      * @param items
      */
-    list(title, tokenTouch, items, backgroundImage) {
-        if (this.hasDisplay) {
+    list(title, tokenTouch, items, backgroundImage, backgroundColor) {
+        if (this.hasApl) {
+            this.addApl({
+                "type": "Alexa.Presentation.APL.RenderDocument",
+                "token": "helloworldToken",
+                "document": {
+                    "type": "APL",
+                    "version": "1.5",
+                    "import": [
+                        {
+                            "name": "alexa-layouts",
+                            "version": "1.2.0"
+                        }
+                    ],
+                    "mainTemplate": {
+                        "parameters": [
+                            "textListData"
+                        ],
+                        "items": [
+                            {
+                                "type": "AlexaTextList",
+                                "theme": "${viewport.theme}",
+                                "headerTitle": title,
+                                // "headerSubtitle": "${textListData.headerSubtitle}",
+                                //"headerAttributionImage": "${textListData.headerAttributionImage}",
+                                "headerDivider": true,
+                                "headerBackButton": true,
+                                "headerBackButtonAccessibilityLabel": "back",
+                                "headerBackgroundColor": "transparent",
+                                /*"headerBackButtonCommand": {
+                                  "type": "SendEvent",
+                                  "arguments": [
+                                    "goBack"
+                                  ]
+                                },*/
+                                "backgroundColor": backgroundColor,
+                                "backgroundImageSource": backgroundImage.url,
+                                "backgroundScale": "best-fill",
+                                "backgroundAlign": "center",
+                                "backgroundBlur": false,
+                                "hideOrdinal": false,
+                                "primaryAction": {
+                                    "type": "SendEvent",
+                                    "arguments": [
+                                        "ListItemSelected",
+                                        "${ordinal}",
+                                        tokenTouch
+                                    ]
+                                },
+                                "listItems": "${" + items.map(this.mapAplItems) + "}"
+                            }
+                        ]
+                    }
+                }
+            });
+        }
+        else if (this.hasDisplay) {
             const myTemplate = {
                 type: 'ListTemplate1',
                 token: tokenTouch,
@@ -124,6 +180,16 @@ class SkillTemplate {
             item['image'] = new Alexa.ImageHelper()
                 .addImageInstance(response.icon);
         }
+        return item;
+    }
+    mapAplItems(response) {
+        let item = {
+            primaryText: response.value,
+            secondaryText: response.value2,
+            secondaryTextPosition: "bottom",
+            token: response.key,
+            imageThumbnailSource: response.icon,
+        };
         return item;
     }
 }
