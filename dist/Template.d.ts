@@ -16,7 +16,7 @@ export interface Template {
     }>, backgroundImage?: {
         url: string;
         desc: string;
-    }): void;
+    }, backgroundColor?: string): void;
     error(msg: string): void;
     card(title: string, message: string, image: string): any;
     /** audio */
