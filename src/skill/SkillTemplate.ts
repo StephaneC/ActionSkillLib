@@ -154,7 +154,7 @@ export class SkillTemplate implements Template {
                                         tokenTouch
                                     ]
                                 },
-                                "listItems": "${" + items.map(this.mapAplItems) + "}"
+                                "listItems": "${" + JSON.stringify(items.map(this.mapAplItems)) + "}"
                             }
                         ]
                     }
