@@ -90,6 +90,9 @@ class SkillTemplate {
      */
     list(title, tokenTouch, items, backgroundImage, backgroundColor) {
         if (this.hasApl) {
+            let bgUrl = null;
+            if (backgroundImage)
+                bgUrl = backgroundImage.url;
             this.addApl({
                 "type": "Alexa.Presentation.APL.RenderDocument",
                 "token": "helloworldToken",
@@ -124,7 +127,7 @@ class SkillTemplate {
                                   ]
                                 },*/
                                 "backgroundColor": backgroundColor,
-                                "backgroundImageSource": backgroundImage.url,
+                                "backgroundImageSource": bgUrl,
                                 "backgroundScale": "best-fill",
                                 "backgroundAlign": "center",
                                 "backgroundBlur": false,
