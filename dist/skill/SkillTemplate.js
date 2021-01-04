@@ -97,7 +97,9 @@ class SkillTemplate {
                 "type": "Alexa.Presentation.APL.RenderDocument",
                 "token": "token",
                 "datasources": {
-                    "items": items.map(this.mapAplItems)
+                    dataForApl: {
+                        "items": items.map(this.mapAplItems)
+                    }
                 },
                 "document": {
                     "type": "APL",
@@ -110,7 +112,7 @@ class SkillTemplate {
                     ],
                     "mainTemplate": {
                         "parameters": [
-                            "items"
+                            "dataForApl"
                         ],
                         "items": [
                             {
@@ -143,7 +145,7 @@ class SkillTemplate {
                                         tokenTouch
                                     ]
                                 },
-                                "listItems": "${items}"
+                                "listItems": "${dataForApl.items}"
                             }
                         ]
                     }
@@ -193,7 +195,6 @@ class SkillTemplate {
             primaryText: response.value,
             secondaryText: response.value2,
             secondaryTextPosition: "bottom",
-            token: response.key,
             imageThumbnailSource: response.icon,
         };
         return item;

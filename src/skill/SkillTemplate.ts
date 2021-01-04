@@ -126,7 +126,7 @@ export class SkillTemplate implements Template {
                     ],
                     "mainTemplate": {
                         "parameters": [
-                            "items"
+                            "dataForApl"
                         ],
                         "items": [
                             {
