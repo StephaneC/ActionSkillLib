@@ -111,7 +111,9 @@ export class SkillTemplate implements Template {
                 "type": "Alexa.Presentation.APL.RenderDocument",
                 "token": "token",
                 "datasources": {
-                    "items": items.map(this.mapAplItems)
+                    dataForApl: {
+                        "items": items.map(this.mapAplItems)
+                    }
                 },
                 "document": {
                     "type": "APL",
@@ -157,7 +159,7 @@ export class SkillTemplate implements Template {
                                         tokenTouch
                                     ]
                                 },
-                                "listItems": "${items}"
+                                "listItems": "${dataForApl.items}"
                             }
                         ]
                     }
