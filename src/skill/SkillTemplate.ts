@@ -109,7 +109,10 @@ export class SkillTemplate implements Template {
             if (backgroundImage) bgUrl = backgroundImage.url;  
             this.addApl({
                 "type": "Alexa.Presentation.APL.RenderDocument",
-                "token": "helloworldToken",
+                "token": "token",
+                "datasources": {
+                    "items": items.map(this.mapAplItems)
+                },
                 "document": {
                     "type": "APL",
                     "version": "1.5",
@@ -121,7 +124,7 @@ export class SkillTemplate implements Template {
                     ],
                     "mainTemplate": {
                         "parameters": [
-                            "listItems"
+                            "items"
                         ],
                         "items": [
                             {
@@ -154,7 +157,7 @@ export class SkillTemplate implements Template {
                                         tokenTouch
                                     ]
                                 },
-                                "listItems": items.map(this.mapAplItems)
+                                "listItems": "${items}"
                             }
                         ]
                     }
