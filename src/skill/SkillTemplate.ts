@@ -211,12 +211,11 @@ export class SkillTemplate implements Template {
 
         return item;
     }
-    private mapAplItems(response: { key: string, value: string, value2?: string, icon?: string }): interfaces.display.ListItem {
+    private mapAplItems(response: { key: string, value: string, value2?: string, icon?: string }) {
         let item = {
             primaryText: response.value,
             secondaryText: response.value2,
             secondaryTextPosition: "bottom",
-            token: response.key,
             imageThumbnailSource: response.icon,
         }
 
