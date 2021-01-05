@@ -154,8 +154,8 @@ export class SkillTemplate implements Template {
                                 "primaryAction": {
                                     "type": "SendEvent",
                                     "arguments": [
-                                        "ListItemSelected",
                                         "${ordinal}",
+                                        "ListItemSelected",
                                         tokenTouch
                                     ]
                                 },

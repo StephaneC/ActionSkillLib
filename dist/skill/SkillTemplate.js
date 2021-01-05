@@ -140,8 +140,8 @@ class SkillTemplate {
                                 "primaryAction": {
                                     "type": "SendEvent",
                                     "arguments": [
-                                        "ListItemSelected",
                                         "${ordinal}",
+                                        "ListItemSelected",
                                         tokenTouch
                                     ]
                                 },
